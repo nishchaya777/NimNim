@@ -1,28 +1,34 @@
-# Coucou — name, character and artwork
+# NimNim — All Rights Reserved
 
-Copyright (c) 2026 Louis Raillé. All rights reserved, except as stated below.
+Copyright (c) 2026 Nishchay. All rights reserved.
 
-The [MIT License](LICENSE) covers the **source code** of Coucou. It does **not** cover the brand and the artwork listed here, which remain the property of Louis Raillé:
+**All content in this repository is proprietary and protected.** This includes but is not limited to:
 
-- the names **“Coucou”** and **“Mochi”**;
-- the **Mochi character** — its design, look, expressions and animations as a character;
-- the **app icon** and **menu bar icon** (`NotchBuddy/Assets.xcassets/`);
-- the **sounds** (`NotchBuddy/Resources/sounds/`);
-- the **images, GIFs and videos** in `docs/media/` and `design/`.
+- All **source code** (Swift, TypeScript, Rust, HTML, JavaScript)
+- The **NimNim character** — its design, animations, outfits, expressions
+- All **app icons**, **menu bar icons**, and **visual assets**
+- All **sounds** and **audio files**
+- All **images, GIFs, videos**, and **design prototypes**
+- All **documentation** and **specifications**
 
-## What you can do
+## What you CANNOT do
 
-- Build and run Coucou from this repository, for yourself, as it is.
-- Fork it and contribute back with pull requests.
-- Show, review, write or talk about Coucou (articles, videos, posts), including screenshots and the demo media.
+- Copy, clone, fork, or download any part of this repository
+- Modify, adapt, or create derivative works
+- Distribute, publish, or share the code or assets
+- Use any part of this project in your own projects
+- Reverse engineer or decompile any part of the Software
+- Use any assets commercially or non-commercially
 
-## What you can't do without written permission
+## What you CAN do
 
-- Publish or distribute an app, a fork or a derivative work under the name “Coucou” or “Mochi”, or with the Coucou icon, the Mochi character or the Coucou sounds — on the App Store, on GitHub releases, or anywhere else.
-- Use any of these assets commercially, or in a way that suggests your project is Coucou or is made or endorsed by its author.
+- View the code on GitHub (read-only)
+- Report bugs via GitHub Issues
 
-If you fork Coucou to ship your own app, that's welcome under the MIT License: just give it **your own name, icon, character and sounds**.
+## Enforcement
 
-## Questions or permission requests
+Any unauthorized use, reproduction, or distribution of this Software will be subject to legal action under applicable copyright laws.
 
-Open an issue on [GitHub](https://github.com/Louis-CFM/coucou/issues) or write to raillelouis@gmail.com.
+## Contact
+
+For permission requests, open an issue on GitHub.
