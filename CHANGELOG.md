@@ -2,18 +2,18 @@
 
 ## 0.1.6 — October 4, 2026
 
-- Mochi on the desktop: drag him out of the notch and drop him anywhere on your desktop. He hangs out there, follows your cursor with his eyes, wears his outfit and dances to your music (#198)
+- NimNim on the desktop: drag him out of the notch and drop him anywhere on your desktop. He hangs out there, follows your cursor with his eyes, wears his outfit and dances to your music (#198)
 - When Claude needs you, he flies back to the notch with the permission or the question, then returns to his spot once you answer. He does a happy jump when a task finishes (#198)
 - Click him to poke him, right-click for the wardrobe, drop him on a window to attach it to the chat (GitHub build), and drop him on the notch or double-click him to bring him home (#198)
 - He falls asleep when nothing is going on, and remembers his spot between launches (#198)
 
 ## 0.1.5 — October 4, 2026
 
-- Dress Mochi up: right-click him to open the wardrobe and pick a party hat, beanie, crown, witch hat, Santa hat, bunny ears, bow, sunglasses, round glasses, scarf or pumpkin, all drawn in code (#195)
-- Auto mode dresses Mochi for the seasons on his own (#195)
-- Outfits follow his head in 3D, glasses stay on his eyes, soft parts react when you tap or move him, and outfits come and go with a transition. Only the main Mochi wears them (#195)
-- A new launch greeting: Mochi drops into the island, bounces, slides to the side and waves hello with a quick little hand, then comes back, with a new soft whisper of a sound (#196)
-- Mochi's body is no longer clipped at two corners during the greeting (#196)
+- Dress NimNim up: right-click him to open the wardrobe and pick a party hat, beanie, crown, witch hat, Santa hat, bunny ears, bow, sunglasses, round glasses, scarf or pumpkin, all drawn in code (#195)
+- Auto mode dresses NimNim for the seasons on his own (#195)
+- Outfits follow his head in 3D, glasses stay on his eyes, soft parts react when you tap or move him, and outfits come and go with a transition. Only the main NimNim wears them (#195)
+- A new launch greeting: NimNim drops into the island, bounces, slides to the side and waves hello with a quick little hand, then comes back, with a new soft whisper of a sound (#196)
+- NimNim's body is no longer clipped at two corners during the greeting (#196)
 
 ## 0.1.4 — October 3, 2026
 
@@ -31,7 +31,7 @@
 - Claude plan usage (GitHub build): turn on Settings → Agents → Plan usage to see your 5-hour and weekly limits in a small pill in the notch header, and click it for the details and reset times. Pro and Max plans; your current status line keeps working (#159)
 - Chat with local models through Ollama or LM Studio, no API key needed: connect them in Settings → Chat → Local models. Answers stream in, and thinking blocks stay hidden (#156)
 - Markdown in chat answers: bold, lists, headings, quotes, and code blocks with a copy button. Links open only when they are web links (#156)
-- Apple Music (GitHub build): see what is playing in the notch, play, pause and skip on hover, and Mochi dances along (#144, #153)
+- Apple Music (GitHub build): see what is playing in the notch, play, pause and skip on hover, and NimNim dances along (#144, #153)
 - Settings are now organized in a sidebar (#153)
 - The chat greets you by your own first name (#154)
 
@@ -54,16 +54,16 @@
 - The island always reopens after folding, and Settings opens below it, resizable — thanks @rouderz
 - Choose the Claude model for the chat in Settings; the list comes from your Anthropic account, and Claude Sonnet 4.6 stays the default — thanks @rouderz
 - Windows build artifacts are now downloadable from a manual CI run — thanks @MysJofR
-- Any agent can talk to Mochi: tag a hook payload with `coucou_agent` (e.g. `nb-hook --agent my-agent`) and it gets its own pill in the island (#7, #9) — thanks @lacatu5
+- Any agent can talk to NimNim: tag a hook payload with `nimnim_agent` (e.g. `nb-hook --agent my-agent`) and it gets its own pill in the island (#7, #9) — thanks @lacatu5
 - Gemini CLI and Antigravity (agy) hook support on macOS: install from Settings and their sessions show up in the island — thanks @corefusiion
 
 ## 0.1.0 — September 27, 2026
 
-- First release: Mochi lives in your notch, breathing, blinking, with eyes that follow your cursor
+- First release: NimNim lives in your notch, breathing, blinking, with eyes that follow your cursor
 - Claude Code sessions: live steps, approve permissions, answer questions, jump to the terminal
 - Chat with Claude from the notch
 - Drop a file on the notch to ask a question about it or send it by email
-- Drag Mochi onto any window to attach it as context
+- Drag NimNim onto any window to attach it as context
 - Integrations: Stripe, n8n, GitHub, Vercel, Resend, Notion, Cal.com
 - 28 handcrafted sounds
 - Hides when idle, peeks out when you hover

@@ -11,7 +11,7 @@ Toutes les mesures sont en points macOS. Les valeurs viennent de `reference/notc
 - **Clics traversants** : la zone transparente ne doit jamais bloquer les clics. Toggle `ignoresMouseEvents` à 60 Hz selon que `NSEvent.mouseLocation` est dans la forme de l'island (plus 6 pt de marge) ou pas.
 - La panel peut devenir key uniquement quand un champ texte de l'island a le focus (prompt, mail). Sinon elle ne vole jamais le focus.
 - Détection du notch : `NSScreen.safeAreaInsets.top` > 0 et `auxiliaryTopLeftArea` / `auxiliaryTopRightArea`. Largeur du notch `wN` = largeur écran − les deux zones auxiliaires ; hauteur `hN` = `safeAreaInsets.top`. Le prototype utilise `wN = 184`, `hN = 32` : dans l'app, prendre les vraies valeurs.
-- Pas d'écran avec notch (Mac de bureau, écran externe ou capot fermé) : afficher sur l'écran principal une barre noire de 80 pt au repos (`hidden`), avec Mochi visible au centre et son animation en pause ; 240 pt en `compact`, en haut au centre. Hauteur plafonnée à 24 pt et à celle de la barre de menus ; personnage et pastilles adaptés à cette hauteur. Le salut se replie vers les dimensions réelles de la barre compacte. La zone de survol au repos ne déborde pas sous la barre. Les vues ouvertes gardent leur largeur de 640 pt.
+- Pas d'écran avec notch (Mac de bureau, écran externe ou capot fermé) : afficher sur l'écran principal une barre noire de 80 pt au repos (`hidden`), avec NimNim visible au centre et son animation en pause ; 240 pt en `compact`, en haut au centre. Hauteur plafonnée à 24 pt et à celle de la barre de menus ; personnage et pastilles adaptés à cette hauteur. Le salut se replie vers les dimensions réelles de la barre compacte. La zone de survol au repos ne déborde pas sous la barre. Les vues ouvertes gardent leur largeur de 640 pt.
 - Suivi de la souris : polling de `NSEvent.mouseLocation` à chaque frame. Aucune permission nécessaire.
 
 ### Forme de l'island
@@ -34,7 +34,7 @@ Grille compact : pastilles Ø 9,5 autour du point (largeur − 27, hN/2), écart
 ## 3. Règles de comportement (validées par Louis)
 
 1. **Rien ne tourne** → `hidden`. Totalement invisible.
-2. **Souris sur le notch** alors que `hidden` → `peek` immédiatement, le bonhomme sort en faisant coucou (mains + son `peek` + son `greet`). Si la souris reste 650 ms → `expanded` (vue `overview`, ou `empty` s'il n'y a aucune tâche). Si elle part pendant le peek → retour `hidden` après 600 ms.
+2. **Souris sur le notch** alors que `hidden` → `peek` immédiatement, le bonhomme sort en faisant nimnim (mains + son `peek` + son `greet`). Si la souris reste 650 ms → `expanded` (vue `overview`, ou `empty` s'il n'y a aucune tâche). Si elle part pendant le peek → retour `hidden` après 600 ms.
 3. **Des tâches tournent et Louis est actif** → `compact` : très fin, le bonhomme visible, il suit la souris des yeux partout sur l'écran.
 4. **Survol en compact** → `expanded` après 200 ms. Clic sur le bonhomme en compact → `expanded` tout de suite.
 5. **Fermeture auto** : une fois ouverte, l'island se replie après **60 s sans activité** (mouvement de souris sur l'island, clic, frappe). Quitter l'island ne la ferme pas. Pendant les 10 dernières secondes, un trait de 2 pt en bas au centre (160 pt → 0, blanc 35 %) montre le compte à rebours. `Échap` ferme.
@@ -145,13 +145,13 @@ Section `.activity` de `GitHubDetailView`. En-tête : chevron.left + « Activity
 
 Nom d'une session Claude Code = nom du dossier de travail (`cwd`), avec une table d'alias réglable (ex. `sbe-hub` → « SBE Hub »). Nom d'un workflow n8n = nom du workflow.
 
-## 7. Le personnage : Mochi
+## 7. Le personnage : NimNim
 
-Porter la classe `Bot` du prototype **telle quelle** en Swift (`Canvas` dans `TimelineView(.animation(paused:))`). Constantes Mochi (`PISTES.mochi`) :
+Porter la classe `Bot` du prototype **telle quelle** en Swift (`Canvas` dans `TimelineView(.animation(paused:))`). Constantes NimNim (`PISTES.nimnim`) :
 
 - R = 0,3 × côté du canvas. Corps : superellipse d'exposant 2,7, rayons rx = 1,14 R, ry = 0,88 R, décalé de +0,06 R vers le bas.
 - Dégradé du corps : `#FFFAF5` (haut droite) → `#DDCCBF` (bas gauche). Teinte d'état : dégradé linéaire de bas en haut, couleur d'état à 92 % × tint jusqu'à transparent à −0,25 ry. Ombrage radial (bord 20 % noir) et reflet radial blanc 55 % en haut à droite.
-- Joues : deux ellipses rose `rgba(255,120,150,.5 × blush)`, blush minimum 0,35 pour Mochi, suivent le regard.
+- Joues : deux ellipses rose `rgba(255,120,150,.5 × blush)`, blush minimum 0,35 pour NimNim, suivent le regard.
 - Yeux : encre `#1A1412`, largeur 0,25 R, hauteur 0,27 R, écart angulaire ±0,37 rad, inclinaison verticale −0,12 rad. Projection sur une sphère (yaw, pitch, roll) avec raccourci de perspective et découpe par la silhouette : c'est ce qui donne les roulades (les yeux sortent par le haut et reviennent par le bas).
 - Regard : suit la souris avec retard (`tanh(dx/260)`, `tanh(dy/200)`, lissage exponentiel). Clignement aléatoire toutes les 2,2 à 5,4 s, double clignement 22 % du temps.
 - Mini-bonhommes : même moteur, corps teinté de la couleur de l'agent, badges réduits.
@@ -205,7 +205,7 @@ Fichiers `assets/sounds/*.wav` (48 kHz stéréo), rendus depuis le moteur du pro
 
 | Événement | Son |
 |---|---|
-| peek / coucou | `peek` + `greet` |
+| peek / nimnim | `peek` + `greet` |
 | ouverture / fermeture | `open` / `close` |
 | survol du bonhomme / petit clic UI | `hover` / `blip` |
 | claque / agacé / sonné | `slap` / `annoyed` / `dizzy` |
@@ -221,14 +221,14 @@ Pas de son pour les mises à jour silencieuses (défilé de tâches, mini-bonhom
 
 ## 10. Barre de menus et réglages
 
-Petit item dans la barre de menus (icône : silhouette du Mochi, monochrome). Menu : Ouvrir le notch, Lancer la démo (⌃⌥⌘D), Réglages…, Debug ▸ (forcer chaque vue, chaque état, chaque émote, ajouter des tâches factices), Quitter.
+Petit item dans la barre de menus (icône : silhouette du NimNim, monochrome). Menu : Ouvrir le notch, Lancer la démo (⌃⌥⌘D), Réglages…, Debug ▸ (forcer chaque vue, chaque état, chaque émote, ajouter des tâches factices), Quitter.
 
 Fenêtre Réglages (SwiftUI, simple), sections dans l'ordre d'affichage :
 - **Anthropic API** : clé (Trousseau), modèle (défaut `claude-sonnet-4-6` ; liste depuis l'API, voir INTEGRATIONS §5).
 - **Chat — other providers** : clé Google AI (Trousseau) ; clé OpenAI (Trousseau). Les modèles se choisissent dans le chat (voir INTEGRATIONS §5bis).
 - **Local models** : URL du serveur Ollama (défaut `http://127.0.0.1:11434`) et/ou LM Studio (défaut `http://127.0.0.1:1234`). Bouton **Connect** : vérifie la joignabilité et sauvegarde l'URL. Bouton **Disconnect** : efface l'URL et le cache. Aucune clé requise (voir INTEGRATIONS §5ter).
 - **Claude Code Hooks** : état des hooks, bouton Installer / Désinstaller.
-- **Plan usage** : toggle **Show in the notch** + bouton **Install relay** / **Uninstall relay**. Voir INTEGRATIONS §1bis. **Jauge de forfait Claude** *(GitHub only)* : petit pill dans l'en-tête de l'île (vue home uniquement). Activé via `showPlanInNotch` (UserDefaults) + `HookServer.statusLineInstalled()`. Couleur = `ClaudePlanGauge.color(for: dominantPct)`. Clic → `showingPlanDetail` bascule et `ClaudePlanCardView` s'affiche à la place de la carte en cours. `showingPlanDetail` se remet à false au changement de focusId, de vue ou de mode. Grand Mochi prend la couleur de l'usage quand `showingPlanDetail == true`.
+- **Plan usage** : toggle **Show in the notch** + bouton **Install relay** / **Uninstall relay**. Voir INTEGRATIONS §1bis. **Jauge de forfait Claude** *(GitHub only)* : petit pill dans l'en-tête de l'île (vue home uniquement). Activé via `showPlanInNotch` (UserDefaults) + `HookServer.statusLineInstalled()`. Couleur = `ClaudePlanGauge.color(for: dominantPct)`. Clic → `showingPlanDetail` bascule et `ClaudePlanCardView` s'affiche à la place de la carte en cours. `showingPlanDetail` se remet à false au changement de focusId, de vue ou de mode. Grand NimNim prend la couleur de l'usage quand `showingPlanDetail == true`.
 - **Gemini CLI Hooks** *(build GitHub)* : état des hooks, bouton Installer / Désinstaller.
 - **Antigravity Hooks** *(build GitHub)* : état des hooks, bouton Installer / Désinstaller.
 - **Integrations** : clé ou token (Trousseau) pour chaque service (n8n, Stripe, GitHub, Vercel, Resend, Notion, Cal.com).
@@ -240,23 +240,23 @@ Fenêtre Réglages (SwiftUI, simple), sections dans l'ordre d'affichage :
 
 ### Garde-robe (`WardrobeView`)
 
-Accessible par clic droit sur la tête de Mochi (étendu ou compact). L'île s'étend sur `.wardrobe`.
+Accessible par clic droit sur la tête de NimNim (étendu ou compact). L'île s'étend sur `.wardrobe`.
 
-**Mise en page** : Mochi à gauche (même position qu'overview, avec la tenue survolée en aperçu direct). À droite : en-tête « Wardrobe » 12 pt semibold + la tenue sélectionnée en 11 pt #8E939C. Si Auto : « Auto · Witch hat » (tenue de saison actuelle).
+**Mise en page** : NimNim à gauche (même position qu'overview, avec la tenue survolée en aperçu direct). À droite : en-tête « Wardrobe » 12 pt semibold + la tenue sélectionnée en 11 pt #8E939C. Si Auto : « Auto · Witch hat » (tenue de saison actuelle).
 
-Grille de pastilles 30 pt, coins 7 pt, fond blanc 6 %, bord blanc 8 % (sélectionnée : 40 %). Chaque pastille affiche l'accessoire dessiné en Canvas statique. La pastille **Auto** porte un badge « AUTO » en 8 pt ; au survol, l'en-tête de droite affiche le nom de la tenue de saison (ou « None » si aucune). Survol : fond 10 % + aperçu sur Mochi. Clic → sélectionne, sauvegarde, son « pop », émote proud.
+Grille de pastilles 30 pt, coins 7 pt, fond blanc 6 %, bord blanc 8 % (sélectionnée : 40 %). Chaque pastille affiche l'accessoire dessiné en Canvas statique. La pastille **Auto** porte un badge « AUTO » en 8 pt ; au survol, l'en-tête de droite affiche le nom de la tenue de saison (ou « None » si aucune). Survol : fond 10 % + aperçu sur NimNim. Clic → sélectionne, sauvegarde, son « pop », émote proud.
 
-**Affichage de la tenue** : la tenue n'est visible sur le gros Mochi que quand `focusId == mainPillId` (ou `focusId == nil`), ou quand l'île n'est pas en mode expanded, ou quand la vue active est `.wardrobe`. Dans tous les autres cas (focus sur une autre tâche en expanded), Mochi porte `.none`.
+**Affichage de la tenue** : la tenue n'est visible sur le gros NimNim que quand `focusId == mainPillId` (ou `focusId == nil`), ou quand l'île n'est pas en mode expanded, ou quand la vue active est `.wardrobe`. Dans tous les autres cas (focus sur une autre tâche en expanded), NimNim porte `.none`.
 
 **Transitions** : chaque accessoire dispose d'une valeur `presence` (0 → 1, animée en 350 ms `Ease.inOut`). À l'entrée, la position est interpolée avec `Ease.back` (légère surcourse). Chaque accessoire est dessiné dans un calque dédié (`GraphicsContext.drawLayer`) pour éviter les transparences parasites entre formes superposées ; opacité du calque = `min(1, presence × 2.5)`. Déplacements typiques à l'entrée : chapeaux descendent de 1,0 ry ; oreilles montent ; écharpe et nœud émergent de leur position de repos.
 
 **Physique** : `physDx` et `physDy` (ressort ω₀ ≈ √60 rad/s, ζ ≈ 0,6) suivent la vélocité du yaw (décalage horizontal) et du bounce (décalage vertical). Impulsions supplémentaires : `physVy += 0,6` lors d'un écrasement (`squash`) ; force centrifuge `rollVel × 0,18` ajoutée à la cible de `physDx` pendant la roulade avec tenue.
 
-**Roulade** : quand Mochi porte une tenue (`outfit != .none`, `outfitPresence > 0,05`), la roulade est **rigide** — tout Mochi (mains derrière, accessoires, corps, yeux, mains devant) est dessiné dans un contexte tourné de `roll` autour du centre du corps. Les accessoires utilisent une projection sans roll (`H.roll = 0`) et restent posés sur la tête ; ils co-tournent via le contexte. Particules et badge sont dessinés hors du contexte tourné. Quand aucune tenue n'est portée, la roulade originale s'applique (illusion sphérique par les yeux uniquement).
+**Roulade** : quand NimNim porte une tenue (`outfit != .none`, `outfitPresence > 0,05`), la roulade est **rigide** — tout NimNim (mains derrière, accessoires, corps, yeux, mains devant) est dessiné dans un contexte tourné de `roll` autour du centre du corps. Les accessoires utilisent une projection sans roll (`H.roll = 0`) et restent posés sur la tête ; ils co-tournent via le contexte. Particules et badge sont dessinés hors du contexte tourné. Quand aucune tenue n'est portée, la roulade originale s'applique (illusion sphérique par les yeux uniquement).
 
-**Fermeture** : Échap, clic maison, ou clic droit sur Mochi à nouveau.
+**Fermeture** : Échap, clic maison, ou clic droit sur NimNim à nouveau.
 
-**Référence visuelle** : `design/outfits/` (`mochi-outfits.js`, `sheet.html`, `mochi-outfits-reference.png`). Outil de développement : `scripts/render-outfits.sh` (hors CI) — génère `/tmp/coucou-outfits.png`, `/tmp/coucou-roll.png`, `/tmp/coucou-transition.png`.
+**Référence visuelle** : `design/outfits/` (`nimnim-outfits.js`, `sheet.html`, `nimnim-outfits-reference.png`). Outil de développement : `scripts/render-outfits.sh` (hors CI) — génère `/tmp/nimnim-outfits.png`, `/tmp/nimnim-roll.png`, `/tmp/nimnim-transition.png`.
 
 **Calendrier des saisons** (mode Auto) :
 - 1 oct – 1 nov : Witch hat
@@ -265,7 +265,7 @@ Grille de pastilles 30 pt, coins 7 pt, fond blanc 6 %, bord blanc 8 % (sélectio
 - Pâques −2 / +1 : Bunny ears
 - 21 juin – 31 août : Sunglasses
 
-**Identifiants stables** (UserDefaults key `mochiOutfit`) :
+**Identifiants stables** (UserDefaults key `nimnimOutfit`) :
 `auto`, `none`, `partyHat`, `beanie`, `crown`, `witchHat`, `santaHat`, `bunnyEars`, `bow`, `sunglasses`, `roundGlasses`, `scarf`, `pumpkin`
 
 Les valeurs supprimées (`topHat`, `cap`, `heartsHeadband`, `strawHat`) sont migrées vers `auto` à la lecture.
@@ -276,7 +276,7 @@ Chaque jalon se termine par build + capture + comparaison aux références + com
 
 - **M0 Base** : vérifier Xcode (`xcodebuild -version`), XcodeGen, `git init`, `project.yml`, app agent qui se lance et affiche le faux contenu. Menu Debug.
 - **M1 Island** : panel, détection du notch, 4 modes, règles §3, clics traversants, animations §4, données factices.
-- **M2 Personnage** : port de `Bot` (Mochi), tous les états et émotes, mini-bonhommes, halo, badges, particules, mains. Pause quand masqué.
+- **M2 Personnage** : port de `Bot` (NimNim), tous les états et émotes, mini-bonhommes, halo, badges, particules, mains. Pause quand masqué.
 - **M3 Vues** : toutes les vues §5, défilé, pastilles, colonne, élément partagé, voiles. Comparer avec les 16 captures.
 - **M4 Sons** : branchement §9, réglages son.
 - **M5 Claude Code** : hooks, approbations, questions, saut au terminal (INTEGRATIONS §1).
@@ -293,9 +293,9 @@ Chaque jalon se termine par build + capture + comparaison aux références + com
 - Hidden = 0 % CPU ; compact < 3 % ; mémoire < 100 Mo.
 - La démo (⌃⌥⌘D) se filme d'une traite sans intervention.
 
-## 13. Mochi sur le bureau
+## 13. NimNim sur le bureau
 
-Mochi peut quitter l'island et vivre comme une icône flottante sur le bureau. Il conserve tout son comportement (tenue, émotes, suivi des yeux, danse) et réagit aux alertes.
+NimNim peut quitter l'island et vivre comme une icône flottante sur le bureau. Il conserve tout son comportement (tenue, émotes, suivi des yeux, danse) et réagit aux alertes.
 
 ### Pose et panneau
 
@@ -305,9 +305,9 @@ Mochi peut quitter l'island et vivre comme une icône flottante sur le bureau. I
 
 ### Installation
 
-- **Depuis le glisser** : quand l'utilisateur lâche Mochi hors de la zone notch et hors de toute fenêtre, `IslandWindowController.finishDrag` cède le panneau fantôme au `DesktopMochiController`. Le panneau s'agrandit vers 120 × 120 (animation ressort ~0,25 s), son contenu remplacé par `DesktopBotView`. Son de bienvenue : `pop`. Atterrissage avec émote `happy`.
-- **Retour dans la zone notch** : lâcher dans le cadre du panneau island → Mochi retourne à la notch sans s'installer sur le bureau.
-- **Au démarrage** (si `UserDefaults["mochiOnDesktop"] == true`) : le greeting se joue normalement, puis à `greetComplete` un nouveau panneau part de la notch et vole vers la position sauvegardée (animation 0,45 s).
+- **Depuis le glisser** : quand l'utilisateur lâche NimNim hors de la zone notch et hors de toute fenêtre, `IslandWindowController.finishDrag` cède le panneau fantôme au `DesktopNimNimController`. Le panneau s'agrandit vers 120 × 120 (animation ressort ~0,25 s), son contenu remplacé par `DesktopBotView`. Son de bienvenue : `pop`. Atterrissage avec émote `happy`.
+- **Retour dans la zone notch** : lâcher dans le cadre du panneau island → NimNim retourne à la notch sans s'installer sur le bureau.
+- **Au démarrage** (si `UserDefaults["nimnimOnDesktop"] == true`) : le greeting se joue normalement, puis à `greetComplete` un nouveau panneau part de la notch et vole vers la position sauvegardée (animation 0,45 s).
 
 ### Interactions
 
@@ -317,32 +317,32 @@ Mochi peut quitter l'island et vivre comme une icône flottante sur le bureau. I
 | Double-clic | Annule le slap en attente ; vol vers la notch (`flyHome()`), island réapparaît |
 | Clic droit | Ouvre/ferme la garde-robe (`.openWardrobeFromDesktop`, sans `.hookExpand`) |
 | Glisser → zone notch | Vol vers la notch (`flyHome()`) |
-| Glisser → fenêtre (GitHub) | Attache le contexte, Mochi revient à sa position initiale, island ouvre `.prompt` |
+| Glisser → fenêtre (GitHub) | Attache le contexte, NimNim revient à sa position initiale, island ouvre `.prompt` |
 | Glisser → ailleurs | Repositionne le panneau (borné au `visibleFrame`) |
 
 ### Personnage complet
 
 - Respiration, clignements, suivi des yeux depuis la position du panneau (pas depuis l'island).
-- Tenue : toujours celle de `state.resolvedOutfit` (main Mochi = toujours habillé).
+- Tenue : toujours celle de `state.resolvedOutfit` (main NimNim = toujours habillé).
 - Danse : mêmes règles que le mode compact (musique + intégration active + état autorisé).
 - 30 fps actif, 10 fps au repos (`TimelineView` adapte `minimumInterval` selon `isSleeping`).
 
 ### Absences de la notch
 
-Quand `AppState.mochiOnDesktop == true`, `BotPlacement` masque le bonhomme de la notch (opacité 0, même règle que `isDraggingBot`).
+Quand `AppState.nimnimOnDesktop == true`, `BotPlacement` masque le bonhomme de la notch (opacité 0, même règle que `isDraggingBot`).
 
 ### Alertes
 
 Détection par `Publishers.CombineLatest($pendingApproval, $pendingQuestion)` — seules les transitions nil↔non-nil déclenchent l'action. La notification `.hookExpand` n'est pas utilisée (elle part aussi pour `.finished`, `.error`, le glisser de fichier, etc.).
 
-1. `pendingApproval` ou `pendingQuestion` passe à non-`nil` → émote `surprised` sur le Mochi du bureau.
-2. Après 0,45 s, `retractForAlert()` : le panneau vole vers la notch et se ferme ; `mochiOnDesktop` passe à `false` (le bonhomme de la notch réapparaît pour l'alerte) ; `UserDefaults["mochiOnDesktop"]` reste `true`.
-3. Quand `pendingApproval` **et** `pendingQuestion` sont tous deux `nil`, `launchFlyIfNeeded()` renvole Mochi vers la position sauvegardée après 0,6 s.
-4. Si l'alerte se résout pendant l'animation de retrait, le panneau ne s'ouvre pas sur la notch — Mochi repart directement vers le bureau.
+1. `pendingApproval` ou `pendingQuestion` passe à non-`nil` → émote `surprised` sur le NimNim du bureau.
+2. Après 0,45 s, `retractForAlert()` : le panneau vole vers la notch et se ferme ; `nimnimOnDesktop` passe à `false` (le bonhomme de la notch réapparaît pour l'alerte) ; `UserDefaults["nimnimOnDesktop"]` reste `true`.
+3. Quand `pendingApproval` **et** `pendingQuestion` sont tous deux `nil`, `launchFlyIfNeeded()` renvole NimNim vers la position sauvegardée après 0,6 s.
+4. Si l'alerte se résout pendant l'animation de retrait, le panneau ne s'ouvre pas sur la notch — NimNim repart directement vers le bureau.
 
 ### `.finished`
 
-Émote `happy` (saut de joie) sur le Mochi du bureau. Détecté par `Publishers.CombineLatest($stateOverride, $tasks)` → `effectiveState` ; ne déclenche pas de retrait vers la notch.
+Émote `happy` (saut de joie) sur le NimNim du bureau. Détecté par `Publishers.CombineLatest($stateOverride, $tasks)` → `effectiveState` ; ne déclenche pas de retrait vers la notch.
 
 ### Sommeil
 
@@ -352,6 +352,6 @@ Détection par `Publishers.CombineLatest($pendingApproval, $pendingQuestion)` �
 
 ### Persistance
 
-- Position et état sauvegardés dans `UserDefaults` (clés : `desktopMochiX`, `desktopMochiY`, `mochiOnDesktop`).
+- Position et état sauvegardés dans `UserDefaults` (clés : `desktopNimNimX`, `desktopNimNimY`, `nimnimOnDesktop`).
 - Position bornée au `visibleFrame` du meilleur écran disponible au chargement ; si aucun écran ne convient, coin bas-droit de l'écran principal avec 24 pt de marge.
 
