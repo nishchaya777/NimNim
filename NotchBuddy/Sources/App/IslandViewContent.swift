@@ -1369,6 +1369,11 @@ struct ModelPickerView: View {
                             case .openai:    state.openAIChatModel = model.id
                             case .ollama:    state.ollamaChatModel = model.id
                             case .lmstudio:  state.lmstudioChatModel = model.id
+                            case .groq:      state.groqChatModel = model.id
+                            case .mistral:   state.mistralChatModel = model.id
+                            case .deepseek:  state.deepseekChatModel = model.id
+                            case .xai:       state.xaiChatModel = model.id
+                            case .together:  state.togetherChatModel = model.id
                             }
                             isPresented = false
                             SoundEngine.shared.play("blip")
@@ -4127,7 +4132,7 @@ private func drawOutfitIcon(context: GraphicsContext, size: CGSize, outfit: Outf
         // Eyes
         var eyeCtx = ctx; eyeCtx.clip(to: bodyPath)
         let ink = Color(red: 0.102, green: 0.082, blue: 0.071)
-        for f in mEyeFrames(mH) {
+        for f in nEyeFrames(mH) {
             guard f.visible else { continue }
             var ec = eyeCtx; ec.translateBy(x: f.x, y: f.y); ec.scaleBy(x: f.fx, y: f.fy)
             let hh = max(f.h, f.w*0.3)
@@ -4211,7 +4216,7 @@ private func drawOutfitIcon(context: GraphicsContext, size: CGSize, outfit: Outf
         var eyeCtx = ctx
         eyeCtx.clip(to: bodyPath)
         let ink = Color(red: 0.102, green: 0.082, blue: 0.071)
-        for f in mEyeFrames(mH) {
+        for f in nEyeFrames(mH) {
             guard f.visible else { continue }
             var ec = eyeCtx
             ec.translateBy(x: f.x, y: f.y)

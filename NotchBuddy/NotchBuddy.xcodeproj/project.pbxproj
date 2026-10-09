@@ -7,100 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0329E76BA4A8FEEA8A6D76E7 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D5410BD030B243ADDCFF4 /* ClaudeService.swift */; };
+		0038AC9FD0E0EEC4BEDEBCD4 /* StripePoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF78999D68D56ADE4CEFBE2 /* StripePoller.swift */; };
+		0585E8C1F7DABCD7D1CCA6EA /* NimNimWardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC5DE7F192C9C69E5836EE /* NimNimWardrobe.swift */; };
 		065FCE817315454DE3F85F25 /* IslandViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B08886939FF6FE0475DD /* IslandViewContent.swift */; };
 		06BF5FD95E03010CAFDBF2D0 /* NotchBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD8F3CAA60CF37640759E1 /* NotchBuddyApp.swift */; };
 		091EC3B2F1060D7EE1317E4E /* IslandWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D710BD7834228045869D0184 /* IslandWindowController.swift */; };
 		0A267EE2955C7AD8E02A296C /* N8nPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89DA1A0C21AE3535A1760BB /* N8nPoller.swift */; };
-		0D68A4C4E3422487DB7B2262 /* IslandScreenGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC1357785CA1B099A33969 /* IslandScreenGeometry.swift */; };
-		0E6E7A12CB5CA4E499DED934 /* NimNimOutfitDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2BC327511DB0B86D4D62E /* NimNimOutfitDrawing.swift */; };
-		0E83C1DD4D20E7FB7A904450 /* VercelPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71718D1B87A39A4879DD2A9D /* VercelPoller.swift */; };
-		0E9CE475EC53C67DAB00F8E5 /* BotEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4540F630F8BA04AFFFA3979 /* BotEngine.swift */; };
 		118FC4AE0AC74D84B4A134D8 /* VercelPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71718D1B87A39A4879DD2A9D /* VercelPoller.swift */; };
+		145F92C6EA03AB52936E3A81 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE21C2B315D37AA70ED45E9 /* SoundEngine.swift */; };
 		1558BB00C530B721172F6E65 /* StripePoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF78999D68D56ADE4CEFBE2 /* StripePoller.swift */; };
-		160EDB9D06275E2607DA5151 /* N8nPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89DA1A0C21AE3535A1760BB /* N8nPoller.swift */; };
 		186AB8904029767DAA5277CF /* IslandScreenGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC1357785CA1B099A33969 /* IslandScreenGeometry.swift */; };
-		18D47AE663EB96BE5638D5F7 /* ClaudePlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4263B550838CC5614569D13 /* ClaudePlanCardView.swift */; };
-		1969590AFEE6CB21404346F1 /* CalcomPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104222B3F17BA5E8DEA5277 /* CalcomPoller.swift */; };
+		1A5C1AB4953951A9265417AB /* NotchBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD8F3CAA60CF37640759E1 /* NotchBuddyApp.swift */; };
+		1BBAC78591A4F743F34C52CB /* BotEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4540F630F8BA04AFFFA3979 /* BotEngine.swift */; };
+		1D02BCC6CF0A421A397BAEAD /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D7015D6A77AA59323C0E7 /* AppLog.swift */; };
 		1F11EC4E6F604C612A1ADAD1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E4F18AA940EFF7E047B9F7 /* AppState.swift */; };
-		2132477000FD77F7EB234DAA /* FileDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3232F258523DD8D09B670363 /* FileDropView.swift */; };
-		273FC0FA14AAF6CE62FD14AE /* DesktopNimNim.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DDC96E7967032F5D0BD585 /* DesktopNimNim.swift */; };
 		2875610F701376BD65573386 /* WindowContextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B733ADC638E14E9BB6EFA /* WindowContextCapture.swift */; };
 		2C798C3837A63B9BB561A1A0 /* HookServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8DD79C3DD9BBC584B3CB2 /* HookServer.swift */; };
-		2CC2E3B688B15BBEB3AE3BCE /* WindowContextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B733ADC638E14E9BB6EFA /* WindowContextCapture.swift */; };
 		2DEB459FBD0BA3CEAAA5FDE9 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D5410BD030B243ADDCFF4 /* ClaudeService.swift */; };
 		2F36E3C6C073E968A682AFA4 /* NotionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE03E03D1804B0B92C5C2DAD /* NotionPoller.swift */; };
-		3756B7E1A55D9CEC8C4D34A4 /* IslandStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212018F09EA1E96FBD63CD /* IslandStateMachine.swift */; };
-		38EEB2D3A6EC538958D92575 /* GitHubPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3AD61802A32C4833F3EDA /* GitHubPulse.swift */; };
+		32B2C845BFC8926110777616 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = C066E2B991AA4F56B2724263 /* sounds */; };
+		32D32D59028CA67A469A389A /* IslandStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212018F09EA1E96FBD63CD /* IslandStateMachine.swift */; };
+		3EF2D21BBC7CD71B68ADC111 /* GitHubActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168A9A73B519018FAB0AA465 /* GitHubActivity.swift */; };
 		3F19756A396F125EC711247F /* IslandTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3CE3617E9D336DDBA10F7A /* IslandTypes.swift */; };
-		4117E7C8AA231AAE36E7509D /* UploadCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B043223AFBBFB7418A5E /* UploadCanvasView.swift */; };
+		4409E44FDB2EBBA5B1BAB2A9 /* IslandTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3CE3617E9D336DDBA10F7A /* IslandTypes.swift */; };
+		47608CA22C46E2B3C98B24CE /* CalcomPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104222B3F17BA5E8DEA5277 /* CalcomPoller.swift */; };
 		4976F8BF814D6F817370F1D8 /* ChatMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE88A53AEAA637F866D479D /* ChatMarkdownView.swift */; };
+		4AF014F87BD616C4DC230691 /* FileDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3232F258523DD8D09B670363 /* FileDropView.swift */; };
 		4B6AC00F22EC75E90E0157D5 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D7015D6A77AA59323C0E7 /* AppLog.swift */; };
 		4F1E0B3C838DA3CD6F864BC0 /* CalcomPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104222B3F17BA5E8DEA5277 /* CalcomPoller.swift */; };
 		56BE8C733F10A030A638FB60 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A7D5CBE2AC084A10C5FF3 /* SettingsView.swift */; };
+		56E3E4321819E41B300423F3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E4F18AA940EFF7E047B9F7 /* AppState.swift */; };
+		578EC8C712AAEC89FE2D861D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A7D5CBE2AC084A10C5FF3 /* SettingsView.swift */; };
+		5B732B95EC1E86AA7227FECE /* AskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB84A66045EB20CAC93A8A6 /* AskQuestion.swift */; };
 		5B9A00AFB0837731FA678E4E /* IslandStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8212018F09EA1E96FBD63CD /* IslandStateMachine.swift */; };
 		5C6D0BC8C546718CAA82BF90 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F142FB3952B5F0639383047 /* MusicController.swift */; };
+		5E977F4D2A7A51F290B6D43B /* ChatMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE88A53AEAA637F866D479D /* ChatMarkdownView.swift */; };
+		6011A7F1122E3265C2FDE9A1 /* IslandViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B08886939FF6FE0475DD /* IslandViewContent.swift */; };
 		60E361FFE84C387E5E3ED1AA /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE21C2B315D37AA70ED45E9 /* SoundEngine.swift */; };
-		61CB7049490F61CFA1B36B64 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6D7015D6A77AA59323C0E7 /* AppLog.swift */; };
-		61F73B27A7E3AFF584B2CC22 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E4F18AA940EFF7E047B9F7 /* AppState.swift */; };
 		62C4EE3F74DAA59764729E62 /* UploadCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B043223AFBBFB7418A5E /* UploadCanvasView.swift */; };
-		63093DC288B68F7F17249517 /* GitHubActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168A9A73B519018FAB0AA465 /* GitHubActivity.swift */; };
-		63F9F3AAC881D3EDDDD8AED9 /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A13AEE6E06F46CEC9D908C /* UserIdentity.swift */; };
-		651FA3F09608DE5D02D61CCE /* BotCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F4C0B02BE91654D02AA0C /* BotCanvasView.swift */; };
+		636821C67661E633AE8CDAFF /* SafeWebURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDED98F7F6C755A72C97A3 /* SafeWebURL.swift */; };
 		6697436AA05A3F92C1DD85C3 /* DiffEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB24C2469551040FBAA4DBF /* DiffEngine.swift */; };
-		68A950E3C23FD612639D9776 /* IslandViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B08886939FF6FE0475DD /* IslandViewContent.swift */; };
 		6D158183870434FEDF07E050 /* LocalChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790ACE9F73BD74640A0F20C /* LocalChat.swift */; };
 		6FC65C190ED614C664C9BC17 /* SafeWebURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDED98F7F6C755A72C97A3 /* SafeWebURL.swift */; };
-		733FCC6A45DE963EF2024B4E /* ChatMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE88A53AEAA637F866D479D /* ChatMarkdownView.swift */; };
-		78B3C6814431B2DD9D1F4949 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE21C2B315D37AA70ED45E9 /* SoundEngine.swift */; };
-		78FCEDC8F78B683AB10E6529 /* NotionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE03E03D1804B0B92C5C2DAD /* NotionPoller.swift */; };
+		78060BFDC9BC7C59063530DB /* NimNimOutfitDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A3CA7AEF78190F24B7E22E /* NimNimOutfitDrawing.swift */; };
+		793DFFF149557A66EA2AB561 /* IslandScreenGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC1357785CA1B099A33969 /* IslandScreenGeometry.swift */; };
 		7C75CCB3DC0116D8D3B12313 /* AskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB84A66045EB20CAC93A8A6 /* AskQuestion.swift */; };
+		822E37C1DD267F07C234B18D /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A13AEE6E06F46CEC9D908C /* UserIdentity.swift */; };
+		845B9DAEE0F57C002F8E246B /* WindowContextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91B733ADC638E14E9BB6EFA /* WindowContextCapture.swift */; };
+		85A05E2A4386E1BB52B27F96 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F142FB3952B5F0639383047 /* MusicController.swift */; };
 		862CE6CB220D55E46F646DA9 /* GitHubPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3AD61802A32C4833F3EDA /* GitHubPulse.swift */; };
-		878924960FC0F2B3524D48AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192844E7299DEED5C2372067 /* AppDelegate.swift */; };
+		87AED84B2C28650461BB5D24 /* HookServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8DD79C3DD9BBC584B3CB2 /* HookServer.swift */; };
 		8A6B3688D6B3BF728D106D8B /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A13AEE6E06F46CEC9D908C /* UserIdentity.swift */; };
 		8C32A0C3EAF536D3836F61D5 /* GreetingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581F7B1A9F14B281B60063E /* GreetingCanvasView.swift */; };
-		8D1C01F283FA7806119A1C85 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A7D5CBE2AC084A10C5FF3 /* SettingsView.swift */; };
+		8C7C396E81F41410E84AAA40 /* NotionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE03E03D1804B0B92C5C2DAD /* NotionPoller.swift */; };
 		8FC5907E9506DC79EB1DDC3C /* ChatMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797CC384B5BC70D34F121BC /* ChatMarkdown.swift */; };
-		94A742758D0FF79124E26B21 /* NimNimWardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BB15BD82E4A0B729045880 /* NimNimWardrobe.swift */; };
+		907032B8579B2394E67F7500 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83D5410BD030B243ADDCFF4 /* ClaudeService.swift */; };
 		94E0849D13762C6EC8548FEF /* ClaudePlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4263B550838CC5614569D13 /* ClaudePlanCardView.swift */; };
+		95F87CBFF002A28E387B7358 /* PillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A38B5686C4A1F15AB5D29 /* PillCatalog.swift */; };
 		967B525F7D3837F31D740D18 /* ResendPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B5FDDE03F5F711146937E2 /* ResendPoller.swift */; };
-		9C653B8291EFFA414565E8A8 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F142FB3952B5F0639383047 /* MusicController.swift */; };
-		9DD56C95ECABDDCE23652D50 /* HookServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D8DD79C3DD9BBC584B3CB2 /* HookServer.swift */; };
-		B2D86BE268D6F4C86BD0C446 /* ChatMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797CC384B5BC70D34F121BC /* ChatMarkdown.swift */; };
-		B3EC9CF3C8BD629C3530E8F1 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = C066E2B991AA4F56B2724263 /* sounds */; };
-		B605F976F4141435F27CF266 /* IslandRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1A8206F73376F4CAF2057 /* IslandRootView.swift */; };
-		BA65FC4A40F7227837C26214 /* DesktopNimNimLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086E1932F86B9C2B559BE03 /* DesktopNimNimLogic.swift */; };
-		BEC5DDB55B3DA67C61CA8470 /* DesktopNimNim.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1DDC96E7967032F5D0BD585 /* DesktopNimNim.swift */; };
-		C0E18D0F6F5F6D131E6066B8 /* GreetingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581F7B1A9F14B281B60063E /* GreetingCanvasView.swift */; };
-		C18227D148D99FE6EE3CC51A /* GithubPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8B6E5E9DA6164F979E88F /* GithubPoller.swift */; };
-		C1A29371181553FB4169E195 /* DiffEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB24C2469551040FBAA4DBF /* DiffEngine.swift */; };
+		968A20EA21B6B784A5357BEA /* GithubPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8B6E5E9DA6164F979E88F /* GithubPoller.swift */; };
+		9A6ACAD6276439A834401E90 /* DesktopNimNimLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67ED957CFE4C1BAD4269D27 /* DesktopNimNimLogic.swift */; };
+		9CDCC154BC87E5D718FE6CFD /* VercelPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71718D1B87A39A4879DD2A9D /* VercelPoller.swift */; };
+		9F86034FAC82911A9B379711 /* DesktopNimNim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC6A2A461CE7C3996A7EB0D /* DesktopNimNim.swift */; };
+		A15C1DED73A7EF40B88035A5 /* ClaudePlanGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF22817EC70748F2D1FB2E7 /* ClaudePlanGauge.swift */; };
+		A1D0C55EA3ACB0F4DE0E6D9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506824380E9C80B9BC6DCE72 /* Assets.xcassets */; };
+		A337B681ADCE36595DAEDFD1 /* DesktopNimNim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC6A2A461CE7C3996A7EB0D /* DesktopNimNim.swift */; };
+		A352FB1A1B08EA13EAFC5EF5 /* UploadSequenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD65943C32E150F1CD65C31 /* UploadSequenceEngine.swift */; };
+		AA746714BA829D62678A427D /* DiffEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB24C2469551040FBAA4DBF /* DiffEngine.swift */; };
+		B1ABED7F215D0E35B2315030 /* IslandRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1A8206F73376F4CAF2057 /* IslandRootView.swift */; };
+		B50EC4BA5831A9FEC9F7DFD8 /* UploadCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B241B043223AFBBFB7418A5E /* UploadCanvasView.swift */; };
+		B857859A41353E40FF32AE59 /* LocalChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790ACE9F73BD74640A0F20C /* LocalChat.swift */; };
 		C24D863967D8D32D828ED4B1 /* BotEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4540F630F8BA04AFFFA3979 /* BotEngine.swift */; };
-		C61DDE2EC5FDDB39E4AA3B34 /* IslandWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D710BD7834228045869D0184 /* IslandWindowController.swift */; };
+		C436FE61483A1D39C9A6565B /* ChatMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D797CC384B5BC70D34F121BC /* ChatMarkdown.swift */; };
+		C4E4CCCDA7F3C690DFF680F6 /* NimNimWardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC5DE7F192C9C69E5836EE /* NimNimWardrobe.swift */; };
+		C70B32C1602CB0115704364E /* N8nPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89DA1A0C21AE3535A1760BB /* N8nPoller.swift */; };
 		C808B654C84D9F71DBF8493A /* GithubPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB8B6E5E9DA6164F979E88F /* GithubPoller.swift */; };
-		C93BA975D35B8CD7473CF995 /* DesktopNimNimLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C086E1932F86B9C2B559BE03 /* DesktopNimNimLogic.swift */; };
 		C940B651C6CA952D99388E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192844E7299DEED5C2372067 /* AppDelegate.swift */; };
 		CA3321C14A11FED94E48B3E3 /* IslandRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1A8206F73376F4CAF2057 /* IslandRootView.swift */; };
 		CD8DECA66B9E09C97E469DB9 /* BotCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F4C0B02BE91654D02AA0C /* BotCanvasView.swift */; };
+		CFDAF3B54C7B637BC64F2A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192844E7299DEED5C2372067 /* AppDelegate.swift */; };
+		D1AB81581E74C7A106CF2E70 /* GreetingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C581F7B1A9F14B281B60063E /* GreetingCanvasView.swift */; };
 		D58B1E93AF65DE404C40E21E /* PillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A38B5686C4A1F15AB5D29 /* PillCatalog.swift */; };
-		D82E93014C8087AE81511E40 /* IslandTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3CE3617E9D336DDBA10F7A /* IslandTypes.swift */; };
 		D861479F6E7EAD07A6AC2105 /* ClaudePlanGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF22817EC70748F2D1FB2E7 /* ClaudePlanGauge.swift */; };
 		D9FF132804EB458F6FA69116 /* GitHubActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168A9A73B519018FAB0AA465 /* GitHubActivity.swift */; };
 		DCAC390FF9EC65B945A15B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506824380E9C80B9BC6DCE72 /* Assets.xcassets */; };
-		DE05D09A32117582AC93A24A /* NotchBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BD8F3CAA60CF37640759E1 /* NotchBuddyApp.swift */; };
-		E4B9986674F4D425826F15A8 /* StripePoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF78999D68D56ADE4CEFBE2 /* StripePoller.swift */; };
+		E6B68D261C771CFE6B92F2CB /* BotCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F4C0B02BE91654D02AA0C /* BotCanvasView.swift */; };
 		E776C7D1DE5C62EA8D4BA3E3 /* FileDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3232F258523DD8D09B670363 /* FileDropView.swift */; };
-		E7A5D23F455565FE1E210398 /* PillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A38B5686C4A1F15AB5D29 /* PillCatalog.swift */; };
-		E81575CE4433C6F88E424A8F /* LocalChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8790ACE9F73BD74640A0F20C /* LocalChat.swift */; };
-		E85D8AC2617F7742C2547E11 /* NimNimOutfitDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2BC327511DB0B86D4D62E /* NimNimOutfitDrawing.swift */; };
-		E9C21D11BCB72C392436D19E /* ClaudePlanGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF22817EC70748F2D1FB2E7 /* ClaudePlanGauge.swift */; };
-		EB23ED9F1C12EA8B54A76A91 /* ResendPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B5FDDE03F5F711146937E2 /* ResendPoller.swift */; };
-		ECECA2F225E82B7C951658D7 /* UploadSequenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD65943C32E150F1CD65C31 /* UploadSequenceEngine.swift */; };
-		ED5D9A334DE08C0EB81DE322 /* AskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB84A66045EB20CAC93A8A6 /* AskQuestion.swift */; };
+		E93A784B4BB8ECAEFDC4C28C /* NimNimOutfitDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A3CA7AEF78190F24B7E22E /* NimNimOutfitDrawing.swift */; };
+		F0433C6964D43FBBD4413066 /* DesktopNimNimLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67ED957CFE4C1BAD4269D27 /* DesktopNimNimLogic.swift */; };
 		F06EE0A97CB77096A337AA8B /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = C066E2B991AA4F56B2724263 /* sounds */; };
-		F11A2EBCBF7352536B2CB93D /* NimNimWardrobe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BB15BD82E4A0B729045880 /* NimNimWardrobe.swift */; };
+		F712D314C234802BDACF2E47 /* IslandWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D710BD7834228045869D0184 /* IslandWindowController.swift */; };
+		F732F3A76A3E13C1C7FA05C6 /* ClaudePlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4263B550838CC5614569D13 /* ClaudePlanCardView.swift */; };
+		F751943EE260BBFEDB33364C /* ResendPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B5FDDE03F5F711146937E2 /* ResendPoller.swift */; };
 		FAD78D74C6906D4EC8AA4101 /* UploadSequenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD65943C32E150F1CD65C31 /* UploadSequenceEngine.swift */; };
-		FBBC4CDE82B5886A83A27D7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506824380E9C80B9BC6DCE72 /* Assets.xcassets */; };
-		FEFEF1EBAB0E6CA74A33C10B /* SafeWebURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FDED98F7F6C755A72C97A3 /* SafeWebURL.swift */; };
+		FFA16D0118D45A31EDEDCA49 /* GitHubPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3AD61802A32C4833F3EDA /* GitHubPulse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,18 +111,18 @@
 		2EF78999D68D56ADE4CEFBE2 /* StripePoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripePoller.swift; sourceTree = "<group>"; };
 		3104222B3F17BA5E8DEA5277 /* CalcomPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcomPoller.swift; sourceTree = "<group>"; };
 		3232F258523DD8D09B670363 /* FileDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropView.swift; sourceTree = "<group>"; };
-		34C2BC327511DB0B86D4D62E /* NimNimOutfitDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimNimOutfitDrawing.swift; sourceTree = "<group>"; };
 		3B6A38B5686C4A1F15AB5D29 /* PillCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCatalog.swift; sourceTree = "<group>"; };
 		3DB24C2469551040FBAA4DBF /* DiffEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffEngine.swift; sourceTree = "<group>"; };
-		4DC2A07E42245A8CF3BBD2AB /* NimNimAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimNimAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F142FB3952B5F0639383047 /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
 		506824380E9C80B9BC6DCE72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61B5FDDE03F5F711146937E2 /* ResendPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendPoller.swift; sourceTree = "<group>"; };
+		66A3CA7AEF78190F24B7E22E /* NimNimOutfitDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimNimOutfitDrawing.swift; sourceTree = "<group>"; };
 		6FD65943C32E150F1CD65C31 /* UploadSequenceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSequenceEngine.swift; sourceTree = "<group>"; };
 		71718D1B87A39A4879DD2A9D /* VercelPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VercelPoller.swift; sourceTree = "<group>"; };
 		78BC1357785CA1B099A33969 /* IslandScreenGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandScreenGeometry.swift; sourceTree = "<group>"; };
 		79D8DD79C3DD9BBC584B3CB2 /* HookServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookServer.swift; sourceTree = "<group>"; };
 		7C1A7D5CBE2AC084A10C5FF3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7DC6A2A461CE7C3996A7EB0D /* DesktopNimNim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopNimNim.swift; sourceTree = "<group>"; };
 		8790ACE9F73BD74640A0F20C /* LocalChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalChat.swift; sourceTree = "<group>"; };
 		8BF22817EC70748F2D1FB2E7 /* ClaudePlanGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudePlanGauge.swift; sourceTree = "<group>"; };
 		8CB8B6E5E9DA6164F979E88F /* GithubPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPoller.swift; sourceTree = "<group>"; };
@@ -131,26 +131,26 @@
 		A14A61070D293AB4BBA303F7 /* NotchBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A29F4C0B02BE91654D02AA0C /* BotCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotCanvasView.swift; sourceTree = "<group>"; };
 		A83D5410BD030B243ADDCFF4 /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeService.swift; sourceTree = "<group>"; };
-		B1DDC96E7967032F5D0BD585 /* DesktopNimNim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopNimNim.swift; sourceTree = "<group>"; };
+		ADBC5DE7F192C9C69E5836EE /* NimNimWardrobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimNimWardrobe.swift; sourceTree = "<group>"; };
 		B241B043223AFBBFB7418A5E /* UploadCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCanvasView.swift; sourceTree = "<group>"; };
 		B2FDED98F7F6C755A72C97A3 /* SafeWebURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeWebURL.swift; sourceTree = "<group>"; };
 		B89DA1A0C21AE3535A1760BB /* N8nPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N8nPoller.swift; sourceTree = "<group>"; };
 		BE03E03D1804B0B92C5C2DAD /* NotionPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionPoller.swift; sourceTree = "<group>"; };
 		BFE88A53AEAA637F866D479D /* ChatMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMarkdownView.swift; sourceTree = "<group>"; };
 		C066E2B991AA4F56B2724263 /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = Resources/sounds; sourceTree = SOURCE_ROOT; };
-		C086E1932F86B9C2B559BE03 /* DesktopNimNimLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopNimNimLogic.swift; sourceTree = "<group>"; };
-		C0BB15BD82E4A0B729045880 /* NimNimWardrobe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimNimWardrobe.swift; sourceTree = "<group>"; };
 		C2E4F18AA940EFF7E047B9F7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		C581F7B1A9F14B281B60063E /* GreetingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCanvasView.swift; sourceTree = "<group>"; };
 		D4540F630F8BA04AFFFA3979 /* BotEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotEngine.swift; sourceTree = "<group>"; };
 		D710BD7834228045869D0184 /* IslandWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandWindowController.swift; sourceTree = "<group>"; };
 		D797CC384B5BC70D34F121BC /* ChatMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMarkdown.swift; sourceTree = "<group>"; };
 		D8212018F09EA1E96FBD63CD /* IslandStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandStateMachine.swift; sourceTree = "<group>"; };
+		E2551080A6CB3254F7D3C94A /* NimNimAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NimNimAppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91B733ADC638E14E9BB6EFA /* WindowContextCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowContextCapture.swift; sourceTree = "<group>"; };
 		EBB84A66045EB20CAC93A8A6 /* AskQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskQuestion.swift; sourceTree = "<group>"; };
 		F1BD8F3CAA60CF37640759E1 /* NotchBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotchBuddyApp.swift; sourceTree = "<group>"; };
 		F4263B550838CC5614569D13 /* ClaudePlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudePlanCardView.swift; sourceTree = "<group>"; };
 		F4A13AEE6E06F46CEC9D908C /* UserIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
+		F67ED957CFE4C1BAD4269D27 /* DesktopNimNimLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopNimNimLogic.swift; sourceTree = "<group>"; };
 		F8D3AD61802A32C4833F3EDA /* GitHubPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubPulse.swift; sourceTree = "<group>"; };
 		FA02B08886939FF6FE0475DD /* IslandViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandViewContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,8 +171,8 @@
 				F4263B550838CC5614569D13 /* ClaudePlanCardView.swift */,
 				8BF22817EC70748F2D1FB2E7 /* ClaudePlanGauge.swift */,
 				A83D5410BD030B243ADDCFF4 /* ClaudeService.swift */,
-				B1DDC96E7967032F5D0BD585 /* DesktopNimNim.swift */,
-				C086E1932F86B9C2B559BE03 /* DesktopNimNimLogic.swift */,
+				7DC6A2A461CE7C3996A7EB0D /* DesktopNimNim.swift */,
+				F67ED957CFE4C1BAD4269D27 /* DesktopNimNimLogic.swift */,
 				3DB24C2469551040FBAA4DBF /* DiffEngine.swift */,
 				3232F258523DD8D09B670363 /* FileDropView.swift */,
 				168A9A73B519018FAB0AA465 /* GitHubActivity.swift */,
@@ -187,10 +187,10 @@
 				FA02B08886939FF6FE0475DD /* IslandViewContent.swift */,
 				D710BD7834228045869D0184 /* IslandWindowController.swift */,
 				8790ACE9F73BD74640A0F20C /* LocalChat.swift */,
-				34C2BC327511DB0B86D4D62E /* NimNimOutfitDrawing.swift */,
-				C0BB15BD82E4A0B729045880 /* NimNimWardrobe.swift */,
 				4F142FB3952B5F0639383047 /* MusicController.swift */,
 				B89DA1A0C21AE3535A1760BB /* N8nPoller.swift */,
+				66A3CA7AEF78190F24B7E22E /* NimNimOutfitDrawing.swift */,
+				ADBC5DE7F192C9C69E5836EE /* NimNimWardrobe.swift */,
 				F1BD8F3CAA60CF37640759E1 /* NotchBuddyApp.swift */,
 				BE03E03D1804B0B92C5C2DAD /* NotionPoller.swift */,
 				3B6A38B5686C4A1F15AB5D29 /* PillCatalog.swift */,
@@ -211,7 +211,7 @@
 		6CF11AAA7898712CF6DB364A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4DC2A07E42245A8CF3BBD2AB /* NimNimAppStore.app */,
+				E2551080A6CB3254F7D3C94A /* NimNimAppStore.app */,
 				A14A61070D293AB4BBA303F7 /* NotchBuddy.app */,
 			);
 			name = Products;
@@ -264,12 +264,12 @@
 			productReference = A14A61070D293AB4BBA303F7 /* NotchBuddy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		495922874E20462B9FC47E53 /* NimNimAppStore */ = {
+		F2D68E496B99608EF1F388DA /* NimNimAppStore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21BF9C617EC84EECBB6BC46D /* Build configuration list for PBXNativeTarget "NimNimAppStore" */;
+			buildConfigurationList = 52A73A2499448638CF720500 /* Build configuration list for PBXNativeTarget "NimNimAppStore" */;
 			buildPhases = (
-				760473CA0E9C38B61B761B8C /* Sources */,
-				4AFCA0709B0C077E65F471EB /* Resources */,
+				F2DBD9DE3942090FB4385AEE /* Sources */,
+				6B32E83859B906CD8BE442A2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -279,7 +279,7 @@
 			packageProductDependencies = (
 			);
 			productName = NimNimAppStore;
-			productReference = 4DC2A07E42245A8CF3BBD2AB /* NimNimAppStore.app */;
+			productReference = E2551080A6CB3254F7D3C94A /* NimNimAppStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -294,7 +294,7 @@
 					12E59C1D41BFA3D2F7CDD7F5 = {
 						ProvisioningStyle = Manual;
 					};
-					495922874E20462B9FC47E53 = {
+					F2D68E496B99608EF1F388DA = {
 						DevelopmentTeam = 256AUJ9555;
 						ProvisioningStyle = Automatic;
 					};
@@ -315,18 +315,18 @@
 			projectRoot = "";
 			targets = (
 				12E59C1D41BFA3D2F7CDD7F5 /* NotchBuddy */,
-				495922874E20462B9FC47E53 /* NimNimAppStore */,
+				F2D68E496B99608EF1F388DA /* NimNimAppStore */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4AFCA0709B0C077E65F471EB /* Resources */ = {
+		6B32E83859B906CD8BE442A2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBBC4CDE82B5886A83A27D7A /* Assets.xcassets in Resources */,
-				B3EC9CF3C8BD629C3530E8F1 /* sounds in Resources */,
+				A1D0C55EA3ACB0F4DE0E6D9B /* Assets.xcassets in Resources */,
+				32B2C845BFC8926110777616 /* sounds in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,8 +358,8 @@
 				94E0849D13762C6EC8548FEF /* ClaudePlanCardView.swift in Sources */,
 				D861479F6E7EAD07A6AC2105 /* ClaudePlanGauge.swift in Sources */,
 				2DEB459FBD0BA3CEAAA5FDE9 /* ClaudeService.swift in Sources */,
-				BEC5DDB55B3DA67C61CA8470 /* DesktopNimNim.swift in Sources */,
-				BA65FC4A40F7227837C26214 /* DesktopNimNimLogic.swift in Sources */,
+				9F86034FAC82911A9B379711 /* DesktopNimNim.swift in Sources */,
+				F0433C6964D43FBBD4413066 /* DesktopNimNimLogic.swift in Sources */,
 				6697436AA05A3F92C1DD85C3 /* DiffEngine.swift in Sources */,
 				E776C7D1DE5C62EA8D4BA3E3 /* FileDropView.swift in Sources */,
 				D9FF132804EB458F6FA69116 /* GitHubActivity.swift in Sources */,
@@ -374,10 +374,10 @@
 				065FCE817315454DE3F85F25 /* IslandViewContent.swift in Sources */,
 				091EC3B2F1060D7EE1317E4E /* IslandWindowController.swift in Sources */,
 				6D158183870434FEDF07E050 /* LocalChat.swift in Sources */,
-				E85D8AC2617F7742C2547E11 /* NimNimOutfitDrawing.swift in Sources */,
-				94A742758D0FF79124E26B21 /* NimNimWardrobe.swift in Sources */,
 				5C6D0BC8C546718CAA82BF90 /* MusicController.swift in Sources */,
 				0A267EE2955C7AD8E02A296C /* N8nPoller.swift in Sources */,
+				78060BFDC9BC7C59063530DB /* NimNimOutfitDrawing.swift in Sources */,
+				C4E4CCCDA7F3C690DFF680F6 /* NimNimWardrobe.swift in Sources */,
 				06BF5FD95E03010CAFDBF2D0 /* NotchBuddyApp.swift in Sources */,
 				2F36E3C6C073E968A682AFA4 /* NotionPoller.swift in Sources */,
 				D58B1E93AF65DE404C40E21E /* PillCatalog.swift in Sources */,
@@ -394,55 +394,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		760473CA0E9C38B61B761B8C /* Sources */ = {
+		F2DBD9DE3942090FB4385AEE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				878924960FC0F2B3524D48AC /* AppDelegate.swift in Sources */,
-				61CB7049490F61CFA1B36B64 /* AppLog.swift in Sources */,
-				61F73B27A7E3AFF584B2CC22 /* AppState.swift in Sources */,
-				ED5D9A334DE08C0EB81DE322 /* AskQuestion.swift in Sources */,
-				651FA3F09608DE5D02D61CCE /* BotCanvasView.swift in Sources */,
-				0E9CE475EC53C67DAB00F8E5 /* BotEngine.swift in Sources */,
-				1969590AFEE6CB21404346F1 /* CalcomPoller.swift in Sources */,
-				B2D86BE268D6F4C86BD0C446 /* ChatMarkdown.swift in Sources */,
-				733FCC6A45DE963EF2024B4E /* ChatMarkdownView.swift in Sources */,
-				18D47AE663EB96BE5638D5F7 /* ClaudePlanCardView.swift in Sources */,
-				E9C21D11BCB72C392436D19E /* ClaudePlanGauge.swift in Sources */,
-				0329E76BA4A8FEEA8A6D76E7 /* ClaudeService.swift in Sources */,
-				273FC0FA14AAF6CE62FD14AE /* DesktopNimNim.swift in Sources */,
-				C93BA975D35B8CD7473CF995 /* DesktopNimNimLogic.swift in Sources */,
-				C1A29371181553FB4169E195 /* DiffEngine.swift in Sources */,
-				2132477000FD77F7EB234DAA /* FileDropView.swift in Sources */,
-				63093DC288B68F7F17249517 /* GitHubActivity.swift in Sources */,
-				38EEB2D3A6EC538958D92575 /* GitHubPulse.swift in Sources */,
-				C18227D148D99FE6EE3CC51A /* GithubPoller.swift in Sources */,
-				C0E18D0F6F5F6D131E6066B8 /* GreetingCanvasView.swift in Sources */,
-				9DD56C95ECABDDCE23652D50 /* HookServer.swift in Sources */,
-				B605F976F4141435F27CF266 /* IslandRootView.swift in Sources */,
-				0D68A4C4E3422487DB7B2262 /* IslandScreenGeometry.swift in Sources */,
-				3756B7E1A55D9CEC8C4D34A4 /* IslandStateMachine.swift in Sources */,
-				D82E93014C8087AE81511E40 /* IslandTypes.swift in Sources */,
-				68A950E3C23FD612639D9776 /* IslandViewContent.swift in Sources */,
-				C61DDE2EC5FDDB39E4AA3B34 /* IslandWindowController.swift in Sources */,
-				E81575CE4433C6F88E424A8F /* LocalChat.swift in Sources */,
-				0E6E7A12CB5CA4E499DED934 /* NimNimOutfitDrawing.swift in Sources */,
-				F11A2EBCBF7352536B2CB93D /* NimNimWardrobe.swift in Sources */,
-				9C653B8291EFFA414565E8A8 /* MusicController.swift in Sources */,
-				160EDB9D06275E2607DA5151 /* N8nPoller.swift in Sources */,
-				DE05D09A32117582AC93A24A /* NotchBuddyApp.swift in Sources */,
-				78FCEDC8F78B683AB10E6529 /* NotionPoller.swift in Sources */,
-				E7A5D23F455565FE1E210398 /* PillCatalog.swift in Sources */,
-				EB23ED9F1C12EA8B54A76A91 /* ResendPoller.swift in Sources */,
-				FEFEF1EBAB0E6CA74A33C10B /* SafeWebURL.swift in Sources */,
-				8D1C01F283FA7806119A1C85 /* SettingsView.swift in Sources */,
-				78B3C6814431B2DD9D1F4949 /* SoundEngine.swift in Sources */,
-				E4B9986674F4D425826F15A8 /* StripePoller.swift in Sources */,
-				4117E7C8AA231AAE36E7509D /* UploadCanvasView.swift in Sources */,
-				ECECA2F225E82B7C951658D7 /* UploadSequenceEngine.swift in Sources */,
-				63F9F3AAC881D3EDDDD8AED9 /* UserIdentity.swift in Sources */,
-				0E83C1DD4D20E7FB7A904450 /* VercelPoller.swift in Sources */,
-				2CC2E3B688B15BBEB3AE3BCE /* WindowContextCapture.swift in Sources */,
+				CFDAF3B54C7B637BC64F2A07 /* AppDelegate.swift in Sources */,
+				1D02BCC6CF0A421A397BAEAD /* AppLog.swift in Sources */,
+				56E3E4321819E41B300423F3 /* AppState.swift in Sources */,
+				5B732B95EC1E86AA7227FECE /* AskQuestion.swift in Sources */,
+				E6B68D261C771CFE6B92F2CB /* BotCanvasView.swift in Sources */,
+				1BBAC78591A4F743F34C52CB /* BotEngine.swift in Sources */,
+				47608CA22C46E2B3C98B24CE /* CalcomPoller.swift in Sources */,
+				C436FE61483A1D39C9A6565B /* ChatMarkdown.swift in Sources */,
+				5E977F4D2A7A51F290B6D43B /* ChatMarkdownView.swift in Sources */,
+				F732F3A76A3E13C1C7FA05C6 /* ClaudePlanCardView.swift in Sources */,
+				A15C1DED73A7EF40B88035A5 /* ClaudePlanGauge.swift in Sources */,
+				907032B8579B2394E67F7500 /* ClaudeService.swift in Sources */,
+				A337B681ADCE36595DAEDFD1 /* DesktopNimNim.swift in Sources */,
+				9A6ACAD6276439A834401E90 /* DesktopNimNimLogic.swift in Sources */,
+				AA746714BA829D62678A427D /* DiffEngine.swift in Sources */,
+				4AF014F87BD616C4DC230691 /* FileDropView.swift in Sources */,
+				3EF2D21BBC7CD71B68ADC111 /* GitHubActivity.swift in Sources */,
+				FFA16D0118D45A31EDEDCA49 /* GitHubPulse.swift in Sources */,
+				968A20EA21B6B784A5357BEA /* GithubPoller.swift in Sources */,
+				D1AB81581E74C7A106CF2E70 /* GreetingCanvasView.swift in Sources */,
+				87AED84B2C28650461BB5D24 /* HookServer.swift in Sources */,
+				B1ABED7F215D0E35B2315030 /* IslandRootView.swift in Sources */,
+				793DFFF149557A66EA2AB561 /* IslandScreenGeometry.swift in Sources */,
+				32D32D59028CA67A469A389A /* IslandStateMachine.swift in Sources */,
+				4409E44FDB2EBBA5B1BAB2A9 /* IslandTypes.swift in Sources */,
+				6011A7F1122E3265C2FDE9A1 /* IslandViewContent.swift in Sources */,
+				F712D314C234802BDACF2E47 /* IslandWindowController.swift in Sources */,
+				B857859A41353E40FF32AE59 /* LocalChat.swift in Sources */,
+				85A05E2A4386E1BB52B27F96 /* MusicController.swift in Sources */,
+				C70B32C1602CB0115704364E /* N8nPoller.swift in Sources */,
+				E93A784B4BB8ECAEFDC4C28C /* NimNimOutfitDrawing.swift in Sources */,
+				0585E8C1F7DABCD7D1CCA6EA /* NimNimWardrobe.swift in Sources */,
+				1A5C1AB4953951A9265417AB /* NotchBuddyApp.swift in Sources */,
+				8C7C396E81F41410E84AAA40 /* NotionPoller.swift in Sources */,
+				95F87CBFF002A28E387B7358 /* PillCatalog.swift in Sources */,
+				F751943EE260BBFEDB33364C /* ResendPoller.swift in Sources */,
+				636821C67661E633AE8CDAFF /* SafeWebURL.swift in Sources */,
+				578EC8C712AAEC89FE2D861D /* SettingsView.swift in Sources */,
+				145F92C6EA03AB52936E3A81 /* SoundEngine.swift in Sources */,
+				0038AC9FD0E0EEC4BEDEBCD4 /* StripePoller.swift in Sources */,
+				B50EC4BA5831A9FEC9F7DFD8 /* UploadCanvasView.swift in Sources */,
+				A352FB1A1B08EA13EAFC5EF5 /* UploadSequenceEngine.swift in Sources */,
+				822E37C1DD267F07C234B18D /* UserIdentity.swift in Sources */,
+				9CDCC154BC87E5D718FE6CFD /* VercelPoller.swift in Sources */,
+				845B9DAEE0F57C002F8E246B /* WindowContextCapture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,25 +467,7 @@
 			};
 			name = Release;
 		};
-		601A86C280BDF7077864F3F0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				COMBINE_HIDPI_IMAGES = YES;
-				ENABLE_SANDBOX = NO;
-				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 15.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.louisraille.NotchBuddy;
-				PRODUCT_NAME = NimNim;
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		898FDF7B8955E2C2214D7618 /* Release */ = {
+		58DDB3A4A07719CD6E3B3A90 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -508,7 +490,25 @@
 			};
 			name = Release;
 		};
-		B00AFE3DDD2B0870D9FC5B2A /* Debug */ = {
+		601A86C280BDF7077864F3F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_SANDBOX = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.louisraille.NotchBuddy;
+				PRODUCT_NAME = NimNim;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A2B56554E80B5BBFB63FF30A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -668,20 +668,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21BF9C617EC84EECBB6BC46D /* Build configuration list for PBXNativeTarget "NimNimAppStore" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B00AFE3DDD2B0870D9FC5B2A /* Debug */,
-				898FDF7B8955E2C2214D7618 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		2B80F5D9D7D10C755DEF1E61 /* Build configuration list for PBXProject "NotchBuddy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA9D2D4E8E2B8015D8EA90A2 /* Debug */,
 				ECAB43E9AE0B6830F8D4C6BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		52A73A2499448638CF720500 /* Build configuration list for PBXNativeTarget "NimNimAppStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2B56554E80B5BBFB63FF30A /* Debug */,
+				58DDB3A4A07719CD6E3B3A90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

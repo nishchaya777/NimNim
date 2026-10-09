@@ -180,6 +180,23 @@ final class ClaudeService {
             .map { (id: $0.id, label: $0.id) }
     }
 
+    static func fetchOpenAICompatibleModels(baseURL: String, apiKey: String) async -> [(id: String, label: String)] {
+        guard let url = URL(string: "\(baseURL)/models") else { return [] }
+        var req = URLRequest(url: url, timeoutInterval: 10)
+        req.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        guard let (data, response) = try? await URLSession.shared.data(for: req),
+              (response as? HTTPURLResponse)?.statusCode == 200,
+              let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+              let items = json["data"] as? [[String: Any]] else { return [] }
+        return items
+            .compactMap { item -> (id: String, created: Int)? in
+                guard let id = item["id"] as? String else { return nil }
+                return (id: id, created: item["created"] as? Int ?? 0)
+            }
+            .sorted { $0.created > $1.created }
+            .map { (id: $0.id, label: $0.id) }
+    }
+
     /// Chosen in Settings; falls back to the default when the field is left empty.
     private var model: String {
         let m = AppState.shared.claudeModel.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -282,8 +299,13 @@ final class ClaudeService {
             baseURL = LocalChat.normaliseURL(state.lmstudioServerURL)
         } else {
             switch provider {
-            case .google:  baseURL = "https://generativelanguage.googleapis.com/v1beta/openai"
-            case .openai:  baseURL = "https://api.openai.com/v1"
+            case .google:    baseURL = "https://generativelanguage.googleapis.com/v1beta/openai"
+            case .openai:    baseURL = "https://api.openai.com/v1"
+            case .groq:      baseURL = "https://api.groq.com/openai/v1"
+            case .mistral:   baseURL = "https://api.mistral.ai/v1"
+            case .deepseek:  baseURL = "https://api.deepseek.com/v1"
+            case .xai:       baseURL = "https://api.x.ai/v1"
+            case .together:  baseURL = "https://api.together.xyz/v1"
             case .anthropic, .ollama, .lmstudio: baseURL = ""
             }
         }
