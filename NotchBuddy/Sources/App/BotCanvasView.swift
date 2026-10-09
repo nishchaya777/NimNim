@@ -5,7 +5,7 @@ import SwiftUI
 struct BotCanvasView: View {
     @ObservedObject var state: AppState
     var particleOverhang: CGFloat = 0
-    /// When set, overrides island-based eye-tracking (used by desktop Mochi).
+    /// When set, overrides island-based eye-tracking (used by desktop NimNim).
     /// CGPoint in the same coord space as state.mousePosition (y-down from screen top).
     var lookOriginOverride: CGPoint? = nil
 
@@ -69,7 +69,7 @@ struct BotCanvasView: View {
                 engine.update(dt: dt)
                 var ctx = context
                 engine.applyDance(&ctx, size: size)
-                // Rigid-roll: when Mochi wears an outfit (presence > 0.05) and is rolling,
+                // Rigid-roll: when NimNim wears an outfit (presence > 0.05) and is rolling,
                 // rotate the entire body+accessories context around the body center so the
                 // whole character genuinely turns. Particles/badge (drawHandsAndExtras) are
                 // drawn outside the rotated context and do not spin.

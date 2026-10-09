@@ -122,7 +122,7 @@ npm run icons          # regenerates src-tauri/icons from scripts/gen-icons.mjs
 ```
 windows/
   src/                 island front end (TypeScript, no framework)
-    mochi/             NimNim and the launch greeting, in Canvas 2D
+    nimnim/            NimNim and the launch greeting, in Canvas 2D
     island/            state machine, hooks, integrations
     views/             every island view
     settings/          the settings window
@@ -167,7 +167,7 @@ What changes on Linux:
 - **The island** is a gtk-layer-shell overlay anchored to the top edge, over any
   top panel, on compositors that support it: COSMIC, KDE Plasma, Hyprland, Sway
   and other wlroots compositors. GNOME has no layer-shell, so there the island
-  is a regular window. `COUCOU_LAYER_SHELL=0` forces that mode anywhere.
+  is a regular window. `NIMNIM_LAYER_SHELL=0` forces that mode anywhere.
 - **Click-through** is the window's input region, kept equal to the island
   shape, so the compositor sends every other click to what is underneath.
 - **NimNim's eyes** follow the pointer only while it is over the island: Wayland

@@ -29,8 +29,8 @@ final class AppState: ObservableObject {
     // Bot drag-attach state (hides original bot while ghost follows cursor)
     @Published var isDraggingBot: Bool = false
 
-    // Desktop Mochi: true while Mochi lives on the desktop instead of the notch
-    @Published var mochiOnDesktop: Bool = false
+    // Desktop NimNim: true while NimNim lives on the desktop instead of the notch
+    @Published var nimNimOnDesktop: Bool = false
 
     // Mouse tracking
     var mousePosition: CGPoint = .zero
@@ -71,9 +71,9 @@ final class AppState: ObservableObject {
         didSet { UserDefaults.standard.set(soundEnabled, forKey: "soundEnabled") }
     }
 
-    // Mochi outfit selection — persisted
-    @Published var mochiOutfitSelection: Outfit = .auto {
-        didSet { Outfit.stored = mochiOutfitSelection }
+    // NimNim outfit selection — persisted
+    @Published var nimNimOutfitSelection: Outfit = .auto {
+        didSet { Outfit.stored = nimNimOutfitSelection }
     }
     // Transient: outfit preview while hovering in wardrobe (overrides resolvedOutfit in BotCanvasView)
     var wardrobePreviewOutfit: Outfit? = nil
@@ -81,7 +81,7 @@ final class AppState: ObservableObject {
     private var _seasonalCache: (dayOfYear: Int, year: Int, outfit: Outfit)?
     var resolvedOutfit: Outfit {
         if let preview = wardrobePreviewOutfit { return preview }
-        guard mochiOutfitSelection == .auto else { return mochiOutfitSelection }
+        guard nimNimOutfitSelection == .auto else { return nimNimOutfitSelection }
         let cal = Calendar.current
         let now = Date()
         let day  = cal.ordinality(of: .day, in: .year, for: now) ?? 0
@@ -454,7 +454,7 @@ final class AppState: ObservableObject {
 
         if let v = ud.object(forKey: "soundEnabled") as? Bool   { soundEnabled = v }
         if let v = ud.object(forKey: "soundVolume")  as? Double { soundVolume  = v }
-        mochiOutfitSelection = Outfit.stored
+        nimNimOutfitSelection = Outfit.stored
         if let v = ud.string(forKey: "claudeModel"),
            !v.trimmingCharacters(in: .whitespaces).isEmpty { claudeModel = v }
         if let v = ud.string(forKey: "chatProvider"), let p = ChatProvider(rawValue: v) { chatProvider = p }

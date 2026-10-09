@@ -1,7 +1,7 @@
 #!/bin/bash
-# render-outfits.sh — compile and run the Mochi outfit planche renderer
+# render-outfits.sh — compile and run the NimNim outfit planche renderer
 # NOT in CI. Run manually: bash scripts/render-outfits.sh
-# Output: /tmp/coucou-outfits.png
+# Output: /tmp/nimnim-outfits.png
 
 set -e
 cd "$(dirname "$0")/.."
@@ -15,16 +15,16 @@ swiftc \
   -target arm64-apple-macosx15.0 \
   NotchBuddy/Sources/App/IslandScreenGeometry.swift \
   NotchBuddy/Sources/App/IslandTypes.swift \
-  NotchBuddy/Sources/App/MochiWardrobe.swift \
+  NotchBuddy/Sources/App/NimNimWardrobe.swift \
   NotchBuddy/Sources/App/BotEngine.swift \
-  NotchBuddy/Sources/App/MochiOutfitDrawing.swift \
+  NotchBuddy/Sources/App/NimNimOutfitDrawing.swift \
   scripts/RenderOutfits.swift \
   -framework AppKit \
   -framework SwiftUI \
-  -o /tmp/coucou-render-outfits \
+  -o /tmp/nimnim-render-outfits \
   2>&1
 
 echo "Running renderer..."
-/tmp/coucou-render-outfits
+/tmp/nimnim-render-outfits
 echo "Opening..."
-open /tmp/coucou-outfits.png
+open /tmp/nimnim-outfits.png

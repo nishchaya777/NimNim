@@ -169,9 +169,9 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
 .cal-event-time{font-size:10.5px;color:#6E737C}
 
 /* ===== NIMNIM CHARACTER (Canvas) ===== */
-.mochi-wrap{position:absolute;left:50%;top:0;transform:translateX(-50%);width:56px;height:56px;z-index:20;margin-left:-260px;margin-top:4px}
-.mochi-wrap canvas{width:100%;height:100%}
-.mochi-wrap .glow{position:absolute;inset:-6px;border-radius:50%;background:radial-gradient(circle,var(--g,rgba(230,233,238,.25)),transparent 62%);opacity:.5;filter:blur(4px);pointer-events:none;transition:opacity .5s ease,background .5s ease}
+.nimnim-wrap{position:absolute;left:50%;top:0;transform:translateX(-50%);width:56px;height:56px;z-index:20;margin-left:-260px;margin-top:4px}
+.nimnim-wrap canvas{width:100%;height:100%}
+.nimnim-wrap .glow{position:absolute;inset:-6px;border-radius:50%;background:radial-gradient(circle,var(--g,rgba(230,233,238,.25)),transparent 62%);opacity:.5;filter:blur(4px);pointer-events:none;transition:opacity .5s ease,background .5s ease}
 .char-canvas-wrap{position:relative;display:inline-block}
 .char-canvas-wrap canvas{display:block}
 .char-canvas-wrap .glow{position:absolute;inset:-8px;border-radius:50%;background:radial-gradient(circle,var(--g,rgba(230,233,238,.3)),transparent 62%);opacity:.5;filter:blur(6px);pointer-events:none;transition:opacity .5s ease,background .5s ease}
@@ -260,8 +260,8 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
     <div class="r"><span>100%</span> <span>Wed 8 Oct 14:32</span></div>
   </div>
 
-  <!-- NimNim Character (Canvas — from original Coucou prototype) -->
-  <div class="mochi-wrap">
+  <!-- NimNim Character (Canvas — from original NimNim prototype) -->
+  <div class="nimnim-wrap">
     <div class="glow" id="island-glow"></div>
     <canvas id="island-bot"></canvas>
   </div>
@@ -584,7 +584,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
     <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 80%,rgba(91,204,246,.08),transparent 60%);pointer-events:none"></div>
     <div style="padding:24px;display:flex;gap:24px;align-items:center;flex-wrap:wrap">
 
-      <!-- Character — real Canvas from original Coucou prototype -->
+      <!-- Character — real Canvas from original NimNim prototype -->
       <div style="width:200px;text-align:center;position:relative;flex:none">
         <div class="char-canvas-wrap" style="margin:0 auto">
           <div class="glow" id="studio-glow"></div>
@@ -1021,7 +1021,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
         </span>
       </div>
       <div style="display:flex;gap:10px">
-        <!-- Mochi mini -->
+        <!-- NimNim mini -->
         <div style="width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#5BCCF6,#2B9ED4);flex:none;position:relative;animation:breathe 3s ease-in-out infinite">
           <div style="position:absolute;width:5px;height:7px;border-radius:50%;background:#0B0C0E;left:13px;top:17px"></div>
           <div style="position:absolute;width:5px;height:7px;border-radius:50%;background:#0B0C0E;left:26px;top:17px"></div>
@@ -1173,7 +1173,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
         </div>
       </div>
 
-      <!-- Mochi Size -->
+      <!-- NimNim Size -->
       <div style="margin-bottom:16px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
           <span style="font-size:12px;color:#C9CCD2">NimNim size</span>
@@ -1781,7 +1781,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
 
 <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
 
-<!-- ==================== NIMNIM CHARACTER ENGINE (from original Coucou prototype) ==================== -->
+<!-- ==================== NIMNIM CHARACTER ENGINE (from original NimNim prototype) ==================== -->
 <script>
 (function(){
   /* Utilities */
@@ -1793,7 +1793,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
   const mix=(a,b,t)=>[lerp(a[0],b[0],t),lerp(a[1],b[1],t),lerp(a[2],b[2],t)];
   function rr(x,X,Y,W,H,R){R=Math.max(0,Math.min(R,W/2,H/2));x.beginPath();x.moveTo(X+R,Y);x.arcTo(X+W,Y,X+W,Y+H,R);x.arcTo(X+W,Y+H,X,Y+H,R);x.arcTo(X,Y+H,X,Y,R);x.arcTo(X,Y,X+W,Y,R);x.closePath()}
 
-  /* ---- Web Audio synthesizer (ported from original Coucou Snd system) ---- */
+  /* ---- Web Audio synthesizer (ported from original NimNim Snd system) ---- */
   const Snd={ctx:null,on:true,vol:.6,
     init(){ if(this.ctx)return; const C=window.AudioContext||window.webkitAudioContext; if(!C)return; const c=this.ctx=new C();
       this.master=c.createGain(); this.master.gain.value=this.vol; const comp=c.createDynamicsCompressor(); comp.threshold.value=-18;
@@ -1850,8 +1850,8 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
   function heart(x,s){x.beginPath();x.moveTo(0,s*.38);x.bezierCurveTo(-s*1.05,-s*.15,-s*.5,-s*.95,0,-s*.38);x.bezierCurveTo(s*.5,-s*.95,s*1.05,-s*.15,0,s*.38);x.closePath()}
   function star(x,ro,ri){x.beginPath();for(let i=0;i<10;i++){const r=i%2?ri:ro,a=-Math.PI/2+i*Math.PI/5;x.lineTo(Math.cos(a)*r,Math.sin(a)*r)}x.closePath()}
 
-  /* Character shape: Mochi */
-  const P={name:'Mochi',shape:'mochi',eye:{w:.25,h:.27,sp:.37,p:-.12},base:['#FFFAF5','#DDCCBF'],ink:'#1A1412'};
+  /* Character shape: NimNim */
+  const P={name:'NimNim',shape:'nimnim',eye:{w:.25,h:.27,sp:.37,p:-.12},base:['#FFFAF5','#DDCCBF'],ink:'#1A1412'};
 
   /* States */
   const STATES={
@@ -2157,7 +2157,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
         default: rr(x,-w/2,-h/2,w,h,w/2); x.fill();
       }
     }
-    /* --- Outfit drawing (ported from Swift MochiOutfitDrawing.swift) --- */
+    /* --- Outfit drawing (ported from Swift NimNimOutfitDrawing.swift) --- */
     // Helper: compute eye position following yaw/pitch (matches draw() eye math)
     _eyePos(sd){
       const s=this.s, yaw=sd*P.eye.sp+s.yaw, pitch=P.eye.p+s.pitch+s.roll;
@@ -2772,7 +2772,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
   greetBtn.addEventListener('click',()=>{ studioBot.greet(); islandBot.greet() });
   btnWrap.appendChild(greetBtn);
 
-  /* ---- Outfit selector (wardrobe from MochiWardrobe.swift) ---- */
+  /* ---- Outfit selector (wardrobe from NimNimWardrobe.swift) ---- */
   const outfitWrap = document.getElementById('outfit-btns');
   const OUTFITS = {
     none:         {label:'None',        icon:'',   col:'#6E737C'},
@@ -2916,7 +2916,7 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
   }
   tick();
 
-  /* ---- Page-wide mouse tracking (like original Coucou) ---- */
+  /* ---- Page-wide mouse tracking (like original NimNim) ---- */
   // Both bots track the mouse cursor across the ENTIRE page using Math.tanh for natural falloff
   function lookAt(bot, el) {
     const r = el.getBoundingClientRect();
@@ -3002,11 +3002,11 @@ body{margin:0;background:#0a0b0e;color:var(--ink);font-family:var(--font);-webki
   }
 
   // Island bot interactions
-  const mochiWrap = islandCanvas.parentElement;
-  mochiWrap.style.cursor = 'pointer';
-  mochiWrap.addEventListener('pointerenter', () => botHover(islandBot, true));
-  mochiWrap.addEventListener('pointerleave', () => botHover(islandBot, false));
-  mochiWrap.addEventListener('click', () => handleBotClick(islandBot, islandGlow));
+  const nimNimWrap = islandCanvas.parentElement;
+  nimNimWrap.style.cursor = 'pointer';
+  nimNimWrap.addEventListener('pointerenter', () => botHover(islandBot, true));
+  nimNimWrap.addEventListener('pointerleave', () => botHover(islandBot, false));
+  nimNimWrap.addEventListener('click', () => handleBotClick(islandBot, islandGlow));
 
   // Studio bot interactions
   const studioWrap = studioCanvas.parentElement;

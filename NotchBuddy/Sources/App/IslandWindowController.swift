@@ -168,7 +168,7 @@ final class IslandWindowController: NSWindowController {
                 self.setMode(.hidden)
 
             case .petit:
-                if from == .coucou {
+                if from == .greeting {
                     // Fire interrupt first so canvas collapse starts before mode change
                     NotificationCenter.default.post(name: .greetingInterrupt, object: nil)
                 } else if from == .hidden {
@@ -181,7 +181,7 @@ final class IslandWindowController: NSWindowController {
                 // setMode BEFORE changing view: onChange(of: state.view) guards on .expanded,
                 // so setting view while already compact won't trigger a spurious open animation.
                 self.setMode(.compact)
-                if from == .coucou { self.state.view = self.defaultView() }
+                if from == .greeting { self.state.view = self.defaultView() }
                 // Start 60s hide timer if mouse is not currently over the island
                 if !self.wasInIsland { self.fsm.mouseLeft() }
 
@@ -192,7 +192,7 @@ final class IslandWindowController: NSWindowController {
                     self.fsm.mouseLeft()
                 }
 
-            case .coucou:
+            case .greeting:
                 self.expand(to: .greeting)
             }
         }
@@ -257,8 +257,8 @@ final class IslandWindowController: NSWindowController {
         // Feed FSM hover enter/leave
         if inIsland && !wasInIsland {
             guard !inAttachDrag else { wasInIsland = inIsland; return }
-            // If in coucou: tell greeting to stay open (tc → infinity)
-            if fsm.state == .coucou {
+            // If in greeting: tell greeting to stay open (tc → infinity)
+            if fsm.state == .greeting {
                 NotificationCenter.default.post(name: .greetingHover, object: nil)
             }
             fsm.mouseEntered()
@@ -283,7 +283,7 @@ final class IslandWindowController: NSWindowController {
             }
         }
 
-        // Ghost Mochi follows cursor + window highlight during drag (60 Hz, no throttle)
+        // Ghost NimNim follows cursor + window highlight during drag (60 Hz, no throttle)
         if inAttachDrag {
             updateDragGhost()
             updateWindowHighlight()
@@ -372,7 +372,7 @@ final class IslandWindowController: NSWindowController {
         guard fsm.isHeldOpen?() != true else { return }
         state.isPinned = false
         finishedPinTimer?.cancel()
-        // Keep the FSM in step with what is on screen (home/coucou → petit now).
+        // Keep the FSM in step with what is on screen (home/greeting → petit now).
         fsm.collapse()
         setMode(.compact)
         window?.resignKey()
@@ -418,7 +418,7 @@ final class IslandWindowController: NSWindowController {
             self?.collapse()
         }
 
-        // Wardrobe open/close from desktop Mochi right-click (does NOT post .hookExpand)
+        // Wardrobe open/close from desktop NimNim right-click (does NOT post .hookExpand)
         NotificationCenter.default.addObserver(forName: .openWardrobeFromDesktop, object: nil, queue: .main) { [weak self] _ in
             guard let self else { return }
             if self.state.mode == .expanded && self.state.view == .wardrobe {
@@ -449,8 +449,8 @@ final class IslandWindowController: NSWindowController {
                 let onBot = self.isBotHit(event.locationInWindow)
                 if onBot {
                     // Drag only starts when clicking directly on the bot head
-                    // Notch Mochi is invisible when on desktop — no drag, no slap
-                    guard !self.state.mochiOnDesktop else { return }
+                    // Notch NimNim is invisible when on desktop — no drag, no slap
+                    guard !self.state.nimNimOnDesktop else { return }
                     self.attachDragStart = NSEvent.mouseLocation
                     // Post slap only when expanded
                     guard self.state.mode == .expanded else { return }
@@ -516,14 +516,14 @@ final class IslandWindowController: NSWindowController {
                     NotificationCenter.default.post(name: .triggerEmote, object: BotEmote.happy)
                     self.expand(to: .prompt)
                 } else if !inNotchZone {
-                    // Drop outside notch zone → install Mochi on the desktop.
+                    // Drop outside notch zone → install NimNim on the desktop.
                     // Prevent hideDragGhost from closing the ghost panel so we can promote it.
                     let ghost = self.dragGhostPanel
                     self.dragGhostPanel = nil   // nil first so hideDragGhost skips close
                     self.hideDragGhost()        // resets isDraggingBot, closes highlight panel
-                    DesktopMochiController.shared.install(ghostPanel: ghost, at: mouse)
+                    DesktopNimNimController.shared.install(ghostPanel: ghost, at: mouse)
                 } else {
-                    // Drop back in notch zone → Mochi returns to notch
+                    // Drop back in notch zone → NimNim returns to notch
                     self.hideDragGhost()
                 }
                 #else
@@ -532,7 +532,7 @@ final class IslandWindowController: NSWindowController {
                     let ghost = self.dragGhostPanel
                     self.dragGhostPanel = nil
                     self.hideDragGhost()
-                    DesktopMochiController.shared.install(ghostPanel: ghost, at: mouse)
+                    DesktopNimNimController.shared.install(ghostPanel: ghost, at: mouse)
                 } else {
                     self.hideDragGhost()
                 }
@@ -582,7 +582,7 @@ final class IslandWindowController: NSWindowController {
             guard let self else { return event }
             MainActor.assumeIsolated {
                 guard self.wasInIsland, self.isBotHit(event.locationInWindow) else { return }
-                guard !self.state.mochiOnDesktop else { return }
+                guard !self.state.nimNimOnDesktop else { return }
                 if self.state.mode == .expanded && self.state.view == .wardrobe {
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                         self.state.view = .overview
@@ -620,7 +620,7 @@ final class IslandWindowController: NSWindowController {
         }
     }
 
-    // MARK: - Drag ghost window (Mochi follows cursor during drag)
+    // MARK: - Drag ghost window (NimNim follows cursor during drag)
 
     private func showDragGhost() {
         guard dragGhostPanel == nil else { return }

@@ -4,8 +4,8 @@ import Combine
 
 // MARK: - Desktop bot view state
 
-/// Observable bridge so DesktopMochiController can update view-level state without
-/// coupling to SwiftUI @State.
+/// Observable bridge so DesktopNimNimController can update view-level state
+/// without coupling to SwiftUI @State.
 @MainActor
 final class DesktopBotViewState: ObservableObject {
     /// Drop to 10 fps when sleeping (saves energy).
@@ -19,10 +19,10 @@ final class DesktopBotViewState: ObservableObject {
 
 // MARK: - Desktop bot view
 
-/// Full Mochi character rendered inside the desktop floating panel.
+/// Full NimNim character rendered inside the desktop floating panel.
 struct DesktopBotView: View {
     @ObservedObject var appState: AppState
-    /// Engine owned by DesktopMochiController; controller calls methods on it directly.
+    /// Engine owned by DesktopNimNimController; controller calls methods on it directly.
     let engine: BotEngine
     @ObservedObject var viewState: DesktopBotViewState
 
@@ -39,7 +39,7 @@ struct DesktopBotView: View {
                 engine.lookX = tanh((appState.mousePosition.x - viewState.lookOrigin.x) / 260)
                 engine.lookY = -tanh((appState.mousePosition.y - viewState.lookOrigin.y) / 200)
 
-                // Desktop Mochi is always the "main" Mochi — always dressed
+                // Desktop NimNim is always the "main" NimNim — always dressed
                 engine.setOutfit(appState.resolvedOutfit, animated: true)
 
                 // Dance when music plays (same rules as compact mode)
@@ -89,9 +89,9 @@ struct DesktopBotView: View {
     }
 }
 
-// MARK: - Desktop Mochi controller
+// MARK: - Desktop NimNim controller
 
-/// Manages the "Mochi on the desktop" floating panel.
+/// Manages the "NimNim on the desktop" floating panel.
 ///
 /// Life cycle:
 /// - **Install from drag**: `IslandWindowController.finishDrag` calls `install(ghostPanel:at:)`.
@@ -100,8 +100,8 @@ struct DesktopBotView: View {
 ///   `retractForAlert()` (panel gone, flag stays true) → both nil → `launchFlyIfNeeded()`.
 /// - **User flies home**: double-click → `flyHome()` → full teardown.
 @MainActor
-final class DesktopMochiController {
-    static let shared = DesktopMochiController()
+final class DesktopNimNimController {
+    static let shared = DesktopNimNimController()
     private init() {
         observeScreenSleep()
         observeScreenLock()
@@ -144,19 +144,19 @@ final class DesktopMochiController {
     private var rightClickMonitor:   Any?
 
     // UserDefaults keys
-    private static let posXKey    = "desktopMochiX"
-    private static let posYKey    = "desktopMochiY"
-    private static let enabledKey = "mochiOnDesktop"
+    private static let posXKey    = "desktopNimNimX"
+    private static let posYKey    = "desktopNimNimY"
+    private static let enabledKey = "nimNimOnDesktop"
 
-    static let panelSize: CGFloat = DesktopMochiLogic.panelSize
+    static let panelSize: CGFloat = DesktopNimNimLogic.panelSize
 
     // MARK: - Install (from drag-drop)
 
-    /// Promote `ghostPanel` (the drag ghost) or create a fresh panel as the desktop Mochi,
+    /// Promote `ghostPanel` (the drag ghost) or create a fresh panel as the desktop NimNim,
     /// centered on `screenPoint`. Called by `IslandWindowController.finishDrag`.
     func install(ghostPanel: NSPanel?, at screenPoint: NSPoint) {
         guard panel == nil, phase == .home else { ghostPanel?.close(); return }
-        let s = DesktopMochiController.panelSize
+        let s = DesktopNimNimController.panelSize
 
         let p: NSPanel
         if let ghost = ghostPanel {
@@ -204,12 +204,12 @@ final class DesktopMochiController {
             Task { @MainActor in
                 self.panel = p
                 self.phase = .onDesktop
-                AppState.shared.mochiOnDesktop = true
-                UserDefaults.standard.set(true, forKey: DesktopMochiController.enabledKey)
+                AppState.shared.nimNimOnDesktop = true
+                UserDefaults.standard.set(true, forKey: DesktopNimNimController.enabledKey)
                 self.persistPosition()
                 // Alert may have fired during the animation (observeAlerts skipped: phase wasn't .onDesktop)
                 let alertNow = AppState.shared.pendingApproval != nil || AppState.shared.pendingQuestion != nil
-                if DesktopMochiLogic.shouldRetractOnLanding(alertActive: alertNow) {
+                if DesktopNimNimLogic.shouldRetractOnLanding(alertActive: alertNow) {
                     self.engine?.triggerEmote(.surprised)
                     self.phase = .retracting
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) { [weak self] in
@@ -234,7 +234,7 @@ final class DesktopMochiController {
     /// Fly a new panel from the notch to the saved desktop position.
     /// Called by AppDelegate after `.greetComplete`, and by the alert-return path.
     func launchFlyIfNeeded() {
-        guard UserDefaults.standard.bool(forKey: DesktopMochiController.enabledKey) else { return }
+        guard UserDefaults.standard.bool(forKey: DesktopNimNimController.enabledKey) else { return }
         guard phase == .home else { return }
         guard panel == nil else { return }
         // Alert active: don't fly yet — park in .atNotchForAlert so observeAlerts restores us when it clears
@@ -244,7 +244,7 @@ final class DesktopMochiController {
         }
 
         phase = .flyingOut
-        let s = DesktopMochiController.panelSize
+        let s = DesktopNimNimController.panelSize
         let screen = IslandWindowController.notchScreen() ?? NSScreen.main!
         let startOrigin = NSPoint(x: screen.frame.midX - s/2, y: screen.frame.maxY - s)
         let target = loadSavedPosition()
@@ -270,7 +270,7 @@ final class DesktopMochiController {
         p.alphaValue = 0
         p.orderFront(nil)
 
-        AppState.shared.mochiOnDesktop = true
+        AppState.shared.nimNimOnDesktop = true
 
         NSAnimationContext.runAnimationGroup({ ctx in
             ctx.duration = 0.45
@@ -281,11 +281,11 @@ final class DesktopMochiController {
             Task { @MainActor in
                 self.panel = p
                 self.phase = .onDesktop
-                UserDefaults.standard.set(true, forKey: DesktopMochiController.enabledKey)
+                UserDefaults.standard.set(true, forKey: DesktopNimNimController.enabledKey)
                 self.persistPosition()
                 // Alert may have fired during the flight (observeAlerts skipped: phase was .flyingOut)
                 let alertNow = AppState.shared.pendingApproval != nil || AppState.shared.pendingQuestion != nil
-                if DesktopMochiLogic.shouldRetractOnLanding(alertActive: alertNow) {
+                if DesktopNimNimLogic.shouldRetractOnLanding(alertActive: alertNow) {
                     self.engine?.triggerEmote(.surprised)
                     self.phase = .retracting
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.45) { [weak self] in
@@ -316,7 +316,7 @@ final class DesktopMochiController {
         removeEventMonitors()
         cancellables.removeAll()
         isSleeping = false
-        let s = DesktopMochiController.panelSize
+        let s = DesktopNimNimController.panelSize
         let screen = IslandWindowController.notchScreen() ?? NSScreen.main!
         let targetOrigin = NSPoint(x: screen.frame.midX - s/2, y: screen.frame.maxY - s)
         NSAnimationContext.runAnimationGroup({ ctx in
@@ -334,8 +334,8 @@ final class DesktopMochiController {
 
     // MARK: - Retract for alert (panel flies home; comes back after alert resolves)
 
-    /// Close panel and show notch Mochi for the alert. UserDefaults flag stays true so
-    /// `launchFlyIfNeeded` restores Mochi once the alert is dismissed.
+    /// Close panel and show notch NimNim for the alert. UserDefaults flag stays true so
+    /// `launchFlyIfNeeded` restores NimNim once the alert is dismissed.
     private func retractForAlert() {
         guard let p = panel else { return }
         stopPolling()
@@ -344,7 +344,7 @@ final class DesktopMochiController {
         pendingSlapWorkItem?.cancel()
         isSleeping = false
 
-        let s = DesktopMochiController.panelSize
+        let s = DesktopNimNimController.panelSize
         let screen = IslandWindowController.notchScreen() ?? NSScreen.main!
         let targetOrigin = NSPoint(x: screen.frame.midX - s/2, y: screen.frame.maxY - s)
         NSAnimationContext.runAnimationGroup({ ctx in
@@ -359,7 +359,7 @@ final class DesktopMochiController {
                 self.engine = nil
                 self.viewState = nil
                 self.isDragging = false
-                AppState.shared.mochiOnDesktop = false
+                AppState.shared.nimNimOnDesktop = false
                 // UserDefaults flag stays TRUE so launchFlyIfNeeded works
                 if self.phase == .alertResolvedDuringRetract {
                     self.phase = .home
@@ -389,8 +389,8 @@ final class DesktopMochiController {
         viewState = nil
         isDragging = false
         isSleeping = false
-        AppState.shared.mochiOnDesktop = false
-        UserDefaults.standard.set(false, forKey: DesktopMochiController.enabledKey)
+        AppState.shared.nimNimOnDesktop = false
+        UserDefaults.standard.set(false, forKey: DesktopNimNimController.enabledKey)
     }
 
     // MARK: - Panel factory
@@ -494,10 +494,10 @@ final class DesktopMochiController {
         let mouse = NSEvent.mouseLocation
         let pf    = p.frame
         let local = CGPoint(x: mouse.x - pf.minX, y: mouse.y - pf.minY)
-        let s     = DesktopMochiController.panelSize
+        let s     = DesktopNimNimController.panelSize
 
         // Toggle click-through
-        let overBody   = DesktopMochiLogic.isOverBody(localPoint: local, panelSize: s)
+        let overBody   = DesktopNimNimLogic.isOverBody(localPoint: local, panelSize: s)
         let needsMouse = overBody || isDragging
         if p.ignoresMouseEvents == needsMouse {
             p.ignoresMouseEvents = !needsMouse
@@ -512,7 +512,7 @@ final class DesktopMochiController {
         if agentActive { lastAgentActive = .now }
         let dist     = hypot(mouse.x - pf.midX, mouse.y - pf.midY)
         let interval = Date.now.timeIntervalSince(lastAgentActive)
-        let shouldSleep = DesktopMochiLogic.shouldSleep(lastAgentActiveInterval: interval,
+        let shouldSleep = DesktopNimNimLogic.shouldSleep(lastAgentActiveInterval: interval,
                                                          mouseDistanceToPanelCenter: dist)
         if shouldSleep != isSleeping {
             isSleeping = shouldSleep
@@ -615,7 +615,7 @@ final class DesktopMochiController {
 
         #if !APPSTORE
         if let ctx = islandController?.windowContextAtPoint(mouse) {
-            // Attach window context; Mochi returns to pre-drag position
+            // Attach window context; NimNim returns to pre-drag position
             AppState.shared.promptContext = ctx
             SoundEngine.shared.play("approve")
             engine?.triggerEmote(.happy, duration: 0.6, silent: true)
@@ -684,12 +684,12 @@ final class DesktopMochiController {
 
     private func lookOriginFor(panel: NSPanel) -> CGPoint {
         let screen = panel.screen ?? NSScreen.main!
-        return DesktopMochiLogic.lookOrigin(
+        return DesktopNimNimLogic.lookOrigin(
             panelMinX:    panel.frame.minX,
             panelMinY:    panel.frame.minY,
             screenMinX:   screen.frame.minX,
             screenHeight: screen.frame.height,
-            panelSize:    DesktopMochiController.panelSize)
+            panelSize:    DesktopNimNimController.panelSize)
     }
 
     private func clampToVisibleFrame(_ origin: NSPoint) -> NSPoint {
@@ -698,27 +698,27 @@ final class DesktopMochiController {
             let db = hypot(origin.x - $1.visibleFrame.midX, origin.y - $1.visibleFrame.midY)
             return da < db
         }) ?? NSScreen.main!
-        let pt = DesktopMochiLogic.clampOrigin(
+        let pt = DesktopNimNimLogic.clampOrigin(
             CGPoint(x: origin.x, y: origin.y),
-            panelSize:    DesktopMochiController.panelSize,
+            panelSize:    DesktopNimNimController.panelSize,
             visibleFrame: screen.visibleFrame,
-            margin:       DesktopMochiLogic.clampMargin)
+            margin:       DesktopNimNimLogic.clampMargin)
         return NSPoint(x: pt.x, y: pt.y)
     }
 
     private func loadSavedPosition() -> NSPoint {
         let ud = UserDefaults.standard
-        guard ud.object(forKey: DesktopMochiController.posXKey) != nil else {
+        guard ud.object(forKey: DesktopNimNimController.posXKey) != nil else {
             return defaultPosition()
         }
-        let x = CGFloat(ud.double(forKey: DesktopMochiController.posXKey))
-        let y = CGFloat(ud.double(forKey: DesktopMochiController.posYKey))
+        let x = CGFloat(ud.double(forKey: DesktopNimNimController.posXKey))
+        let y = CGFloat(ud.double(forKey: DesktopNimNimController.posYKey))
         return clampToVisibleFrame(NSPoint(x: x, y: y))
     }
 
     private func defaultPosition() -> NSPoint {
-        let s      = DesktopMochiController.panelSize
-        let margin = DesktopMochiLogic.clampMargin
+        let s      = DesktopNimNimController.panelSize
+        let margin = DesktopNimNimLogic.clampMargin
         let vf     = (NSScreen.main ?? NSScreen.screens[0]).visibleFrame
         return NSPoint(x: vf.maxX - s - margin, y: vf.minY + margin)
     }
@@ -726,7 +726,7 @@ final class DesktopMochiController {
     private func persistPosition() {
         guard let p = panel else { return }
         let o = p.frame.origin
-        UserDefaults.standard.set(Double(o.x), forKey: DesktopMochiController.posXKey)
-        UserDefaults.standard.set(Double(o.y), forKey: DesktopMochiController.posYKey)
+        UserDefaults.standard.set(Double(o.x), forKey: DesktopNimNimController.posXKey)
+        UserDefaults.standard.set(Double(o.y), forKey: DesktopNimNimController.posYKey)
     }
 }

@@ -3,9 +3,9 @@ import CoreGraphics
 
 // MARK: - Alert state machine phase
 
-/// Phase of the desktop Mochi lifecycle.
+/// Phase of the desktop NimNim lifecycle.
 enum DesktopPhase: Equatable {
-    /// No panel on screen; `UserDefaults["mochiOnDesktop"]` is `false`.
+    /// No panel on screen; `UserDefaults["nimNimOnDesktop"]` is `false`.
     case home
     /// Panel animating from notch to saved desktop position.
     case flyingOut
@@ -15,21 +15,21 @@ enum DesktopPhase: Equatable {
     case retracting
     /// Alert cleared while retract animation was still running.
     case alertResolvedDuringRetract
-    /// Retract complete; notch Mochi is showing the alert.
+    /// Retract complete; notch NimNim is showing the alert.
     case atNotchForAlert
 }
 
 // MARK: - Pure geometry / logic (no AppKit — fully unit-testable)
 
-/// Stateless helpers for `DesktopMochiController`.
-enum DesktopMochiLogic {
+/// Stateless helpers for `DesktopNimNimController`.
+enum DesktopNimNimLogic {
     static let panelSize:          CGFloat      = 120
     static let sleepTimeout:       TimeInterval = 120
     static let sleepMouseDistance: CGFloat      = 150
     static let clampMargin:        CGFloat      = 24
     static let bodyRadiusFraction: CGFloat      = 0.24
 
-    /// Whether Mochi should enter sleeping state.
+    /// Whether NimNim should enter sleeping state.
     static func shouldSleep(lastAgentActiveInterval: TimeInterval,
                              mouseDistanceToPanelCenter: CGFloat) -> Bool {
         lastAgentActiveInterval > sleepTimeout && mouseDistanceToPanelCenter >= sleepMouseDistance
@@ -57,7 +57,7 @@ enum DesktopMochiLogic {
         return CGPoint(x: cx - screenMinX, y: screenHeight - cy)
     }
 
-    /// Whether Mochi should immediately retract after landing (alert was active during the flight).
+    /// Whether NimNim should immediately retract after landing (alert was active during the flight).
     static func shouldRetractOnLanding(alertActive: Bool) -> Bool { alertActive }
 
     /// Clamp a panel origin so the panel stays inside `visibleFrame` with `margin` on each side.

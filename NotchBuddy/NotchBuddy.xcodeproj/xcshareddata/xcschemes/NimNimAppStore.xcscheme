@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "495922874E20462B9FC47E53"
-               BuildableName = "CoucouAppStore.app"
-               BlueprintName = "CoucouAppStore"
+               BuildableName = "NimNimAppStore.app"
+               BlueprintName = "NimNimAppStore"
                ReferencedContainer = "container:NotchBuddy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "495922874E20462B9FC47E53"
-            BuildableName = "CoucouAppStore.app"
-            BlueprintName = "CoucouAppStore"
+            BuildableName = "NimNimAppStore.app"
+            BlueprintName = "NimNimAppStore"
             ReferencedContainer = "container:NotchBuddy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "495922874E20462B9FC47E53"
-            BuildableName = "CoucouAppStore.app"
-            BlueprintName = "CoucouAppStore"
+            BuildableName = "NimNimAppStore.app"
+            BlueprintName = "NimNimAppStore"
             ReferencedContainer = "container:NotchBuddy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "495922874E20462B9FC47E53"
-            BuildableName = "CoucouAppStore.app"
-            BlueprintName = "CoucouAppStore"
+            BuildableName = "NimNimAppStore.app"
+            BlueprintName = "NimNimAppStore"
             ReferencedContainer = "container:NotchBuddy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -1,6 +1,6 @@
-// Coucou runs without a console window: Mochi is the whole UI.
+// NimNim runs without a console window: NimNim is the whole UI.
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    coucou_lib::run()
+    nimnim_lib::run()
 }
