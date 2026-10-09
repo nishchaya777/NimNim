@@ -1,8 +1,8 @@
-# NimNim — All Rights Reserved
+# NimNim — Proprietary License
 
 Copyright (c) 2026 Nishchay. All rights reserved.
 
-**All content in this repository is proprietary and protected.** This includes but is not limited to:
+**All content in this repository is proprietary and protected.** This includes:
 
 - All **source code** (Swift, TypeScript, Rust, HTML, JavaScript)
 - The **NimNim character** — its design, animations, outfits, expressions
@@ -11,24 +11,19 @@ Copyright (c) 2026 Nishchay. All rights reserved.
 - All **images, GIFs, videos**, and **design prototypes**
 - All **documentation** and **specifications**
 
-## What you CANNOT do
-
-- Copy, clone, fork, or download any part of this repository
-- Modify, adapt, or create derivative works
-- Distribute, publish, or share the code or assets
-- Use any part of this project in your own projects
-- Reverse engineer or decompile any part of the Software
-- Use any assets commercially or non-commercially
-
-## What you CAN do
+## Allowed
 
 - View the code on GitHub (read-only)
+- Run the Software on your own device for personal evaluation
 - Report bugs via GitHub Issues
 
-## Enforcement
+## NOT Allowed
 
-Any unauthorized use, reproduction, or distribution of this Software will be subject to legal action under applicable copyright laws.
+- Copy, clone, fork, or download
+- Modify, adapt, or create derivative works
+- Distribute, publish, sell, or share
+- Use in your own projects
+- Use commercially in any way
+- Reverse engineer or decompile
 
-## Contact
-
-For permission requests, open an issue on GitHub.
+See [LICENSE](LICENSE) for full terms.
